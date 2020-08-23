@@ -17,6 +17,7 @@
         <item>@drawable/img_sheep</item>
         <item>@drawable/img_snake</item>
         <item>@drawable/img_wolf</item>
+        <item>@drawable/img_wolf</item>
     </array>
     <array name="animal_sounds_drawables">
         <item>@raw/bear</item>
@@ -34,6 +35,7 @@
         <item>@raw/rooster</item>
         <item>@raw/sheep</item>
         <item>@raw/snake</item>
+        <item>@raw/wolf</item>
         <item>@raw/wolf</item>
     </array>
 </resources>

@@ -4,15 +4,13 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.widget.GridView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.gs0ciety.adapter.ImageAdapter;
 import com.gs0ciety.model.AnimalItem;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class PanelButtonActivity extends AppCompatActivity {
+public class PanelButtonActivity extends BaseActivity {
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
