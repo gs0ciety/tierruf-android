@@ -26,45 +26,37 @@ public class ImageAdapter extends BaseAdapter {
 
     public View getView(final int position, View convertView, ViewGroup parent) {
 
-        final LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        View gridView;
+        final LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null) {
-
-            gridView = new View(context);
-
             // get layout from mobile.xml
-            gridView = inflater.inflate(R.layout.item_animal, null);
+            final View view = inflater.inflate(R.layout.item_animal, null);
 
             // set value into textview
-            final TextView textView = gridView.findViewById(R.id.grid_item_animal_text);
+            final TextView textView = view.findViewById(R.id.grid_item_animal_text);
             textView.setText(animalItemList.get(position).getName());
 
             // set image based on selected text
-            final ImageView imageView = gridView.findViewById(R.id.grid_item_animal_picture);
+            final ImageView imageView = view.findViewById(R.id.grid_item_animal_picture);
             imageView.setImageDrawable(context.getResources().getDrawable(animalItemList.get(position).getImageResId()));
 
             imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-                final MediaPlayer mediaPlayer = MediaPlayer.create(context, animalItemList.get(position).getAudioResId());
-                mediaPlayer.start();
-                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(final MediaPlayer mp) {
-                        mp.release();
-                    }
-                });
-            }
-        });
-
+                @Override
+                public void onClick(final View v) {
+                    final MediaPlayer mediaPlayer = MediaPlayer.create(context, animalItemList.get(position).getAudioResId());
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(final MediaPlayer mp) {
+                            mp.release();
+                        }
+                    });
+                }
+            });
+            return view;
         } else {
-            gridView = convertView;
+            return convertView;
         }
-
-        return gridView;
     }
 
     @Override
