@@ -22,5 +22,4 @@ public class BaseActivity extends AppCompatActivity {
         super.setContentView(fullView);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar_base_activity));
     }
-
 }

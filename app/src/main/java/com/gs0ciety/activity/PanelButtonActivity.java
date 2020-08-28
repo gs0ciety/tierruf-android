@@ -2,6 +2,7 @@ package com.gs0ciety.activity;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.GridView;
 
 import androidx.fragment.app.FragmentManager;
@@ -38,6 +39,13 @@ public class PanelButtonActivity extends BaseActivity {
         animalImages.recycle();
         animalSounds.recycle();
 
+        findViewById(R.id.btn_play_sound).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog();
+            }
+        });
+
         gridView.setAdapter(new ImageAdapter(this, animalItemList));
     }
 
@@ -50,7 +58,7 @@ public class PanelButtonActivity extends BaseActivity {
             newFragment.show(fragmentManager, "dialog");
         } else {
             // The device is smaller, so show the fragment fullscreen
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            final FragmentTransaction transaction = fragmentManager.beginTransaction();
             // For a little polish, specify a transition animation
             transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             // To make it fullscreen, use the 'content' root view as the container

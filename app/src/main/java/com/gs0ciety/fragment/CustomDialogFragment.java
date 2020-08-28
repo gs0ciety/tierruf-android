@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.LinearLayout;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -39,10 +40,10 @@ public class CustomDialogFragment extends DialogFragment {
                              final Bundle savedInstanceState) {
         // Inflate the layout to use as dialog or embedded fragment
         final View view = inflater.inflate(R.layout.fragment_play_sound, container, false);
-        final Bundle bundle = new Bundle();
+        final Bundle bundle = this.getArguments();
         animalItemList = (List<AnimalItem>) bundle.getSerializable(KEY_ANIMAL_LIST);
         RecyclerView animalRecycler = view.findViewById(R.id.recycler_animal);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
         animalRecycler.setLayoutManager(layoutManager);
         final GameImageAdapter gameImageAdapter = new GameImageAdapter(getContext(), animalItemList);
         animalRecycler.setAdapter(gameImageAdapter);
