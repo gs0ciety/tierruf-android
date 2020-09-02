@@ -20,8 +20,5 @@ public class BaseActivity extends AppCompatActivity {
         FrameLayout activityContainer = fullView.findViewById(R.id.frame_base_activity_content);
         getLayoutInflater().inflate(layoutResID, activityContainer, true);
         super.setContentView(fullView);
-        Toolbar toolbar = findViewById(R.id.toolbar_base_activity);
-        setSupportActionBar(toolbar);
-        setTitle("Activity Title");
     }
 }

@@ -2,30 +2,73 @@
     android:id="@+id/drawer_base_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorBackground"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/toolbar_base_activity"
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
             android:background="@color/colorPrimary"
-            />
+            android:layout_height="@dimen/height_toolbar_96dp">
+
+                <ImageView
+                    android:id="@+id/btn_animal_panel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/btn_animal_toolbar_panel"
+                    app:layout_constraintBottom_toBottomOf="@id/toolbar_base_activity"
+                    app:layout_constraintTop_toTopOf="@id/toolbar_base_activity"
+                    app:layout_constraintLeft_toLeftOf="@id/toolbar_base_activity"
+                    app:layout_constraintRight_toLeftOf="@id/btn_animal_question"/>
+
+                <ImageView
+                    android:id="@+id/btn_animal_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/btn_animal_toolbar_question"
+                    app:layout_constraintBottom_toBottomOf="@id/toolbar_base_activity"
+                    app:layout_constraintTop_toTopOf="@id/toolbar_base_activity"
+                    app:layout_constraintLeft_toRightOf="@id/btn_animal_panel"
+                    app:layout_constraintRight_toLeftOf="@id/btn_animal_sound"
+                    />
+
+                <ImageView
+                    android:id="@+id/btn_animal_sound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/btn_animal_toolbar_sound"
+                    app:layout_constraintBottom_toBottomOf="@id/toolbar_base_activity"
+                    app:layout_constraintTop_toTopOf="@id/toolbar_base_activity"
+                    app:layout_constraintLeft_toRightOf="@id/btn_animal_question"
+                    app:layout_constraintRight_toLeftOf="@id/btn_animal_name"
+                    />
+
+                <ImageView
+                    android:id="@+id/btn_animal_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/btn_animal_name"
+                    app:layout_constraintBottom_toBottomOf="@id/toolbar_base_activity"
+                    app:layout_constraintTop_toTopOf="@id/toolbar_base_activity"
+                    app:layout_constraintLeft_toRightOf="@id/btn_animal_sound"
+                    app:layout_constraintRight_toRightOf="@id/toolbar_base_activity"
+                    />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
         <FrameLayout
             android:id="@+id/frame_base_activity_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/image_base_background"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/background_jungle"/>
         </FrameLayout>
     </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
