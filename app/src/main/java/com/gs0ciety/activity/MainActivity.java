@@ -2,13 +2,13 @@ package com.gs0ciety.activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-public class BaseActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private ImageView panelIndicator;
     private ImageView questionIndicator;
@@ -23,14 +23,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public void setContentView(int layoutResID) {
-        final DrawerLayout fullView = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_base, null);
-        final FrameLayout activityContainer = fullView.findViewById(R.id.frame_base_activity_content);
-        getLayoutInflater().inflate(layoutResID, activityContainer, true);
-        super.setContentView(fullView);
+        setContentView(R.layout.activity_base);
 
         panelIndicator = findViewById(R.id.img_indicator_animal_panel);
         questionIndicator = findViewById(R.id.img_indicator_animal_question);
@@ -41,6 +34,7 @@ public class BaseActivity extends AppCompatActivity {
         questionButton = findViewById(R.id.btn_animal_question);
         soundButton = findViewById(R.id.btn_animal_sound);
         nameButton = findViewById(R.id.btn_animal_name);
+        loadFragment(new PanelButtonFragment());
     }
 
     public void onClickPanelButton(final View view) {
@@ -52,6 +46,7 @@ public class BaseActivity extends AppCompatActivity {
         soundButton.setAlpha(0.7f);
         nameIndicator.setAlpha(0f);
         nameButton.setAlpha(0.7f);
+        loadFragment(new PanelButtonFragment());
     }
 
     public void onClickSoundButton(final View view) {
@@ -74,6 +69,7 @@ public class BaseActivity extends AppCompatActivity {
         soundButton.setAlpha(0.7f);
         nameIndicator.setAlpha(0f);
         nameButton.setAlpha(0.7f);
+        loadFragment(new GameFragment());
     }
 
     public void onClickNameButton(final View view) {
@@ -85,5 +81,13 @@ public class BaseActivity extends AppCompatActivity {
         questionButton.setAlpha(0.7f);
         soundIndicator.setAlpha(0f);
         soundButton.setAlpha(0.7f);
+    }
+
+    private void loadFragment(final Fragment fragment) {
+        // create a FragmentTransaction to begin the transaction and replace the Fragment
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        // replace the FrameLayout with new Fragment
+        fragmentTransaction.replace(R.id.frame_base_activity_content, fragment);
+        fragmentTransaction.commit(); // save the changes
     }
 }

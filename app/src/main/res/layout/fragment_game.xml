@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/constraint_activity_main_game"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_main_game_animal"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
+            app:srcCompat="@drawable/img_question_dog"
+            app:layout_constraintTop_toTopOf="@id/constraint_activity_main_game"
+            app:layout_constraintLeft_toLeftOf="@id/constraint_activity_main_game"
+            app:layout_constraintRight_toRightOf="@id/constraint_activity_main_game"/>
+
+
+        <ImageView
+            android:id="@+id/game_animal_option_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_question_dog"
+            app:layout_constraintTop_toBottomOf="@id/img_main_game_animal"
+            app:layout_constraintBottom_toTopOf="@id/game_animal_option_4"
+            app:layout_constraintLeft_toLeftOf="@id/constraint_activity_main_game"
+            app:layout_constraintRight_toLeftOf="@id/game_animal_option_2"/>
+
+        <ImageView
+            android:id="@+id/game_animal_option_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_question_dog"
+            app:layout_constraintTop_toBottomOf="@id/img_main_game_animal"
+            app:layout_constraintBottom_toTopOf="@id/game_animal_option_5"
+            app:layout_constraintLeft_toLeftOf="@id/constraint_activity_main_game"
+            app:layout_constraintRight_toRightOf="@id/constraint_activity_main_game"/>
+
+        <ImageView
+            android:id="@+id/game_animal_option_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_question_dog"
+            app:layout_constraintTop_toBottomOf="@id/img_main_game_animal"
+            app:layout_constraintBottom_toTopOf="@id/game_animal_option_6"
+            app:layout_constraintLeft_toRightOf="@id/game_animal_option_2"
+            app:layout_constraintRight_toRightOf="@id/constraint_activity_main_game"/>
+
+        <ImageView
+            android:id="@+id/game_animal_option_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_question_dog"
+            app:layout_constraintTop_toBottomOf="@id/game_animal_option_1"
+            app:layout_constraintBottom_toBottomOf="@id/constraint_activity_main_game"
+            app:layout_constraintLeft_toLeftOf="@id/constraint_activity_main_game"
+            app:layout_constraintRight_toLeftOf="@id/game_animal_option_5"/>
+
+        <ImageView
+            android:id="@+id/game_animal_option_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_question_dog"
+            app:layout_constraintTop_toBottomOf="@id/game_animal_option_2"
+            app:layout_constraintBottom_toBottomOf="@id/constraint_activity_main_game"
+            app:layout_constraintLeft_toRightOf="@id/game_animal_option_4"
+            app:layout_constraintRight_toLeftOf="@id/game_animal_option_6"/>
+
+        <ImageView
+            android:id="@+id/game_animal_option_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_question_dog"
+            app:layout_constraintTop_toBottomOf="@id/game_animal_option_3"
+            app:layout_constraintBottom_toBottomOf="@id/constraint_activity_main_game"
+            app:layout_constraintLeft_toRightOf="@id/game_animal_option_5"
+            app:layout_constraintRight_toRightOf="@id/constraint_activity_main_game"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
