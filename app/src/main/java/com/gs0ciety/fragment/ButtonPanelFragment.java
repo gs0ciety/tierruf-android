@@ -1,4 +1,4 @@
-package com.gs0ciety.activity;
+package com.gs0ciety.fragment;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -11,13 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.gs0ciety.activity.R;
 import com.gs0ciety.adapter.ImageAdapter;
 import com.gs0ciety.model.AnimalItem;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class PanelButtonFragment extends Fragment {
+public class ButtonPanelFragment extends Fragment {
 
     @Nullable
     @Override

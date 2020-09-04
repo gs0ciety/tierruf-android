@@ -1,4 +1,4 @@
-package com.gs0ciety.activity;
+package com.gs0ciety.fragment;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -9,14 +9,15 @@ import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 
+import com.gs0ciety.activity.R;
+
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 public class GameFragment extends Fragment {
 
-    ImageView firstAnimalOption, secondAnimalOption, thirdAnimalOption, fourthAnimalOption,
+    private ImageView firstAnimalOption, secondAnimalOption, thirdAnimalOption, fourthAnimalOption,
         fifthAnimalOption, sixthAnimalOption, mainAnimal;
 
     @Override
@@ -27,18 +28,17 @@ public class GameFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_game, container, false);
         initUiElements(view);
 
-        final Set<Integer> lastMainAnimalsUsed = new HashSet<>();
+        final Set<Integer> lastCorrectAnimalsUsed = new HashSet<>();
         final Set<Integer> lastOptionsAnimalsUsed = new HashSet<>();
         final Set<Integer> lastCorrectOptionsUsed = new HashSet<>();
 
         final TypedArray animalImages = getResources().obtainTypedArray(R.array.animal_images_drawables);
-        final TypedArray animalSounds = getResources().obtainTypedArray(R.array.animal_sounds_drawables);
-
-        int option = getRandomAnimalPosition(lastCorrectOptionsUsed, 5);
-        final int animalResourcePosition = getRandomAnimalPosition(lastMainAnimalsUsed, animalImages.length());
+        final int animalResourcePosition = getRandomCorrectAnimalPosition(lastCorrectAnimalsUsed, animalImages.length());
         mainAnimal.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
+
+        int option = getMainAnimalPositionUsed(lastCorrectOptionsUsed, 6);
         switch (option) {
-            case 0:
+            case 1:
             default:
                 firstAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
                 secondAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
@@ -47,7 +47,7 @@ public class GameFragment extends Fragment {
                 fifthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 sixthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 break;
-            case 1:
+            case 2:
                 secondAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
                 firstAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 thirdAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
@@ -55,7 +55,7 @@ public class GameFragment extends Fragment {
                 fifthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 sixthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 break;
-            case 2:
+            case 3:
                 thirdAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
                 firstAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 secondAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
@@ -63,7 +63,7 @@ public class GameFragment extends Fragment {
                 fifthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 sixthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 break;
-            case 3:
+            case 4:
                 fourthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
                 firstAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 secondAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
@@ -71,7 +71,7 @@ public class GameFragment extends Fragment {
                 fifthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 sixthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 break;
-            case 4:
+            case 5:
                 fifthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
                 firstAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 secondAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
@@ -79,7 +79,7 @@ public class GameFragment extends Fragment {
                 fourthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 sixthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 break;
-            case 5:
+            case 6:
                 sixthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
                 firstAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
                 secondAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
@@ -92,18 +92,31 @@ public class GameFragment extends Fragment {
 
         // recycle the arrays
         animalImages.recycle();
-        animalSounds.recycle();
 
         return view;
     }
 
-    private Integer getRandomAnimalPosition(final Set<Integer> lastMainPositionsUsed, final int animalsAmount) {
+
+    private Integer getMainAnimalPositionUsed(final Set<Integer> lastMainPositionsUsed, final int animalsAmount) {
         if (lastMainPositionsUsed.size() == animalsAmount) {
             lastMainPositionsUsed.clear();
         }
-        int result = ((Double) (Math.random() * animalsAmount)).intValue();
+        final Random r = new Random();
+        int result = r.nextInt(animalsAmount);
         while (!lastMainPositionsUsed.contains(result)) {
-            result = ((Double) (Math.random() * animalsAmount)).intValue();
+            result = r.nextInt(animalsAmount);
+            lastMainPositionsUsed.add(result);
+        }
+        return result;
+    }
+
+    private Integer getRandomCorrectAnimalPosition(final Set<Integer> lastMainPositionsUsed, final int animalsAmount) {
+        if (lastMainPositionsUsed.size() == animalsAmount) {
+            lastMainPositionsUsed.clear();
+        }
+        int result  = new Random().nextInt(animalsAmount + 1);
+        while (!lastMainPositionsUsed.contains(result)) {
+            result = new Random().nextInt(animalsAmount + 1);
             lastMainPositionsUsed.add(result);
         }
         lastMainPositionsUsed.add(result);
@@ -119,7 +132,7 @@ public class GameFragment extends Fragment {
 
         int result;
         do {
-            result = ((Double) (Math.random() * animalsAmount)).intValue();
+            result  = new Random().nextInt(animalsAmount + 1);
         } while (lastAnimalsUsed.contains(result) || result == mainPosition);
         lastAnimalsUsed.add(result);
         return result;

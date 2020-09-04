@@ -8,17 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.gs0ciety.fragment.GameFragment;
+import com.gs0ciety.fragment.ButtonPanelFragment;
+
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView panelIndicator;
-    private ImageView questionIndicator;
-    private ImageView soundIndicator;
-    private ImageView nameIndicator;
-
-    private ImageView panelButton;
-    private ImageView questionButton;
-    private ImageView soundButton;
-    private ImageView nameButton;
+    private ImageView panelIndicator, questionIndicator, soundIndicator, nameIndicator, panelButton,
+            questionButton, soundButton ,nameButton;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -34,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         questionButton = findViewById(R.id.btn_animal_question);
         soundButton = findViewById(R.id.btn_animal_sound);
         nameButton = findViewById(R.id.btn_animal_name);
-        loadFragment(new PanelButtonFragment());
+        loadFragment(new ButtonPanelFragment());
     }
 
     public void onClickPanelButton(final View view) {
@@ -46,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         soundButton.setAlpha(0.7f);
         nameIndicator.setAlpha(0f);
         nameButton.setAlpha(0.7f);
-        loadFragment(new PanelButtonFragment());
+        loadFragment(new ButtonPanelFragment());
     }
 
     public void onClickSoundButton(final View view) {
