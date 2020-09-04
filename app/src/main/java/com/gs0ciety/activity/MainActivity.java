@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadFragment(final Fragment fragment) {
         // create a FragmentTransaction to begin the transaction and replace the Fragment
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         // replace the FrameLayout with new Fragment
         fragmentTransaction.replace(R.id.frame_base_activity_content, fragment);
         fragmentTransaction.commit(); // save the changes
