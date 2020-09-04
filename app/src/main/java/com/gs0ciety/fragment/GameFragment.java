@@ -114,9 +114,9 @@ public class GameFragment extends Fragment {
         if (lastMainPositionsUsed.size() == animalsAmount) {
             lastMainPositionsUsed.clear();
         }
-        int result  = new Random().nextInt(animalsAmount + 1);
+        int result  = new Random().nextInt(animalsAmount);
         while (!lastMainPositionsUsed.contains(result)) {
-            result = new Random().nextInt(animalsAmount + 1);
+            result = new Random().nextInt(animalsAmount);
             lastMainPositionsUsed.add(result);
         }
         lastMainPositionsUsed.add(result);
@@ -132,7 +132,7 @@ public class GameFragment extends Fragment {
 
         int result;
         do {
-            result  = new Random().nextInt(animalsAmount + 1);
+            result  = new Random().nextInt(animalsAmount);
         } while (lastAnimalsUsed.contains(result) || result == mainPosition);
         lastAnimalsUsed.add(result);
         return result;
