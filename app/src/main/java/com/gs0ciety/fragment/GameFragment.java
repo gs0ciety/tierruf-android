@@ -1,14 +1,18 @@
 package com.gs0ciety.fragment;
 
 import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.gs0ciety.activity.R;
 
 import java.util.HashSet;
@@ -33,74 +37,72 @@ public class GameFragment extends Fragment {
         final Set<Integer> lastCorrectOptionsUsed = new HashSet<>();
 
         final TypedArray animalImages = getResources().obtainTypedArray(R.array.animal_images_drawables);
-        final int animalResourcePosition = getRandomCorrectAnimalPosition(lastCorrectAnimalsUsed, animalImages.length());
-        mainAnimal.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
+        final TypedArray animalHiddenImages = getResources().obtainTypedArray(R.array.animal_hidden_drawables);
+
+        final int correctAnimalResourcePosition = getRandomCorrectAnimalPosition(lastCorrectAnimalsUsed, animalImages.length());
+        mainAnimal.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalHiddenImages.getResourceId(correctAnimalResourcePosition, -1), null));
 
         int option = getMainAnimalPositionUsed(lastCorrectOptionsUsed, 6);
         switch (option) {
             case 1:
             default:
-                firstAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
-                secondAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                thirdAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                fourthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                fifthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                sixthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
+                firstAnimalOption.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(correctAnimalResourcePosition, -1), null));
+                configErrorAnimalImage(secondAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(thirdAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(fourthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(fifthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(sixthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 break;
             case 2:
-                secondAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
-                firstAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                thirdAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                fourthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                fifthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                sixthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
+                secondAnimalOption.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(correctAnimalResourcePosition, -1), null));
+                configErrorAnimalImage(firstAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(thirdAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(fourthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(fifthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(sixthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 break;
             case 3:
-                thirdAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
-                firstAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                secondAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                fourthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                fifthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                sixthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
+                thirdAnimalOption.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(correctAnimalResourcePosition, -1), null));
+                configErrorAnimalImage(firstAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(secondAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(fourthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(fifthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(sixthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 break;
             case 4:
-                fourthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
-                firstAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                secondAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                thirdAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                fifthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                sixthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
+                fourthAnimalOption.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(correctAnimalResourcePosition, -1), null));
+                configErrorAnimalImage(firstAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(secondAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(thirdAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(fifthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(sixthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 break;
             case 5:
-                fifthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
-                firstAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                secondAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                thirdAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                fourthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                sixthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
+                fifthAnimalOption.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(correctAnimalResourcePosition, -1), null));
+                configErrorAnimalImage(firstAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(secondAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(thirdAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(fourthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(sixthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 break;
             case 6:
-                sixthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(animalResourcePosition, -1)));
-                firstAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                secondAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                thirdAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                fourthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
-                fifthAnimalOption.setImageDrawable(view.getResources().getDrawable(animalImages.getResourceId(getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), animalResourcePosition), -1)));
+                sixthAnimalOption.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(correctAnimalResourcePosition, -1), null));
+                configErrorAnimalImage(firstAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(secondAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(thirdAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(fourthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
+                configErrorAnimalImage(fifthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 break;
         }
 
-
         // recycle the arrays
         animalImages.recycle();
+        animalHiddenImages.recycle();
 
         return view;
     }
 
-
     private Integer getMainAnimalPositionUsed(final Set<Integer> lastMainPositionsUsed, final int animalsAmount) {
-        if (lastMainPositionsUsed.size() == animalsAmount) {
-            lastMainPositionsUsed.clear();
-        }
         final Random r = new Random();
         int result = r.nextInt(animalsAmount);
         while (!lastMainPositionsUsed.contains(result)) {
@@ -111,9 +113,6 @@ public class GameFragment extends Fragment {
     }
 
     private Integer getRandomCorrectAnimalPosition(final Set<Integer> lastMainPositionsUsed, final int animalsAmount) {
-        if (lastMainPositionsUsed.size() == animalsAmount) {
-            lastMainPositionsUsed.clear();
-        }
         int result  = new Random().nextInt(animalsAmount);
         while (!lastMainPositionsUsed.contains(result)) {
             result = new Random().nextInt(animalsAmount);
@@ -126,10 +125,6 @@ public class GameFragment extends Fragment {
     private Integer getRandomAnimalOptionPosition(final Set<Integer> lastAnimalsUsed,
                                                   final int animalsAmount,
                                                   final int mainPosition) {
-        if (lastAnimalsUsed.size() == animalsAmount - 2) {
-            lastAnimalsUsed.clear();
-        }
-
         int result;
         do {
             result  = new Random().nextInt(animalsAmount);
@@ -146,5 +141,35 @@ public class GameFragment extends Fragment {
         fifthAnimalOption = view.findViewById(R.id.game_animal_option_5);
         sixthAnimalOption = view.findViewById(R.id.game_animal_option_6);
         mainAnimal = view.findViewById(R.id.img_main_game_animal);
+    }
+
+    private Drawable getDrawable(final TypedArray animalImages,
+                                 final int animalResourcePosition) {
+        return ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(animalResourcePosition, -1), null);
+    }
+
+    private void configErrorAnimalImage(final ImageView imageView,
+                                        final TypedArray animalImages,
+                                        final Set<Integer> lastOptionsAnimalsUsed,
+                                        final int correctAnimalResourcePosition) {
+        final int randomSecondAnimalPosition = getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), correctAnimalResourcePosition);
+        imageView.setImageDrawable(getDrawable(animalImages, randomSecondAnimalPosition));
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final TypedArray animalErrorImages = getResources().obtainTypedArray(R.array.animal_error_drawables);
+                imageView.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalErrorImages.getResourceId(randomSecondAnimalPosition, -1), null));
+                animalErrorImages.recycle();
+                showSnackbar(view.getRootView());
+            }
+        });
+    }
+
+    private void showSnackbar (final View view) {
+        Snackbar snackbar = Snackbar
+                .make(view.findViewById(R.id.constraint_activity_main_game), "CORRECT", Snackbar.LENGTH_LONG);
+
+        snackbar.setActionTextColor(Color.YELLOW);
+        snackbar.show();
     }
 }

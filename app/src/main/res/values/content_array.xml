@@ -34,4 +34,38 @@
         <item>@raw/snake</item>
         <item>@raw/wolf</item>
     </array>
+    <array name="animal_hidden_drawables">
+        <item>@drawable/img_bear_hidden</item>
+        <item>@drawable/img_cat_hidden</item>
+        <item>@drawable/img_cow_hidden</item>
+        <item>@drawable/img_dog_hidden</item>
+        <item>@drawable/img_duck_hidden</item>
+        <item>@drawable/img_elephant_hidden</item>
+        <item>@drawable/img_frog_hidden</item>
+        <item>@drawable/img_horse_hidden</item>
+        <item>@drawable/img_lion_hidden</item>
+        <item>@drawable/img_monkey_hidden</item>
+        <item>@drawable/img_pig_hidden</item>
+        <item>@drawable/img_rooster_hidden</item>
+        <item>@drawable/img_sheep_hidden</item>
+        <item>@drawable/img_snake_hidden</item>
+        <item>@drawable/img_wolf_hidden</item>
+    </array>
+    <array name="animal_error_drawables">
+        <item>@drawable/img_bear_error</item>
+        <item>@drawable/img_cat_error</item>
+        <item>@drawable/img_cow_error</item>
+        <item>@drawable/img_dog_error</item>
+        <item>@drawable/img_duck_error</item>
+        <item>@drawable/img_elephant_error</item>
+        <item>@drawable/img_frog_error</item>
+        <item>@drawable/img_horse_error</item>
+        <item>@drawable/img_lion_error</item>
+        <item>@drawable/img_monkey_error</item>
+        <item>@drawable/img_pig_error</item>
+        <item>@drawable/img_rooster_error</item>
+        <item>@drawable/img_sheep_error</item>
+        <item>@drawable/img_snake_error</item>
+        <item>@drawable/img_wolf_error</item>
+    </array>
 </resources>
