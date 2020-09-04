@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.gs0ciety.fragment.GameFragment;
 import com.gs0ciety.fragment.ButtonPanelFragment;
+import com.gs0ciety.interfaces.MainActivityInterface;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         soundButton.setAlpha(0.7f);
         nameIndicator.setAlpha(0f);
         nameButton.setAlpha(0.7f);
-        loadFragment(new GameFragment());
+        loadFragment(new GameFragment(initMainActivityInterface()));
     }
 
     public void onClickNameButton(final View view) {
@@ -83,7 +84,22 @@ public class MainActivity extends AppCompatActivity {
         // create a FragmentTransaction to begin the transaction and replace the Fragment
         final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         // replace the FrameLayout with new Fragment
-        fragmentTransaction.replace(R.id.frame_base_activity_content, fragment);
+        fragmentTransaction.replace(R.id.frame_base_activity_content, fragment, "Your_Fragment_TAG");
         fragmentTransaction.commit(); // save the changes
     }
+
+    private MainActivityInterface initMainActivityInterface() {
+        return new MainActivityInterface() {
+            @Override
+            public void restartGame() {
+                Fragment frg = getSupportFragmentManager().findFragmentByTag("Your_Fragment_TAG");
+                final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.detach(frg);
+                ft.attach(frg);
+                ft.commit();
+            }
+        };
+    }
+
+
 }

@@ -14,12 +14,19 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.gs0ciety.activity.R;
+import com.gs0ciety.interfaces.MainActivityInterface;
 
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
 public class GameFragment extends Fragment {
+
+    private MainActivityInterface mainActivityInterface;
+
+    public GameFragment (final MainActivityInterface mainActivityInterface) {
+        this.mainActivityInterface = mainActivityInterface;
+    }
 
     private ImageView firstAnimalOption, secondAnimalOption, thirdAnimalOption, fourthAnimalOption,
         fifthAnimalOption, sixthAnimalOption, mainAnimal;
@@ -46,7 +53,7 @@ public class GameFragment extends Fragment {
         switch (option) {
             case 1:
             default:
-                firstAnimalOption.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(correctAnimalResourcePosition, -1), null));
+                configCorrectAnimalImage(firstAnimalOption, animalImages, correctAnimalResourcePosition);
                 configErrorAnimalImage(secondAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 configErrorAnimalImage(thirdAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 configErrorAnimalImage(fourthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
@@ -54,7 +61,7 @@ public class GameFragment extends Fragment {
                 configErrorAnimalImage(sixthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 break;
             case 2:
-                secondAnimalOption.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(correctAnimalResourcePosition, -1), null));
+                configCorrectAnimalImage(secondAnimalOption, animalImages, correctAnimalResourcePosition);
                 configErrorAnimalImage(firstAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 configErrorAnimalImage(thirdAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 configErrorAnimalImage(fourthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
@@ -62,7 +69,7 @@ public class GameFragment extends Fragment {
                 configErrorAnimalImage(sixthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 break;
             case 3:
-                thirdAnimalOption.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(correctAnimalResourcePosition, -1), null));
+                configCorrectAnimalImage(thirdAnimalOption, animalImages, correctAnimalResourcePosition);
                 configErrorAnimalImage(firstAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 configErrorAnimalImage(secondAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 configErrorAnimalImage(fourthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
@@ -70,7 +77,7 @@ public class GameFragment extends Fragment {
                 configErrorAnimalImage(sixthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 break;
             case 4:
-                fourthAnimalOption.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(correctAnimalResourcePosition, -1), null));
+                configCorrectAnimalImage(fourthAnimalOption, animalImages, correctAnimalResourcePosition);
                 configErrorAnimalImage(firstAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 configErrorAnimalImage(secondAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 configErrorAnimalImage(thirdAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
@@ -78,7 +85,7 @@ public class GameFragment extends Fragment {
                 configErrorAnimalImage(sixthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 break;
             case 5:
-                fifthAnimalOption.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(correctAnimalResourcePosition, -1), null));
+                configCorrectAnimalImage(fifthAnimalOption, animalImages, correctAnimalResourcePosition);
                 configErrorAnimalImage(firstAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 configErrorAnimalImage(secondAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 configErrorAnimalImage(thirdAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
@@ -86,7 +93,7 @@ public class GameFragment extends Fragment {
                 configErrorAnimalImage(sixthAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 break;
             case 6:
-                sixthAnimalOption.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(correctAnimalResourcePosition, -1), null));
+                configCorrectAnimalImage(sixthAnimalOption, animalImages, correctAnimalResourcePosition);
                 configErrorAnimalImage(firstAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 configErrorAnimalImage(secondAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
                 configErrorAnimalImage(thirdAnimalOption, animalImages, lastOptionsAnimalsUsed, correctAnimalResourcePosition);
@@ -160,16 +167,42 @@ public class GameFragment extends Fragment {
                 final TypedArray animalErrorImages = getResources().obtainTypedArray(R.array.animal_error_drawables);
                 imageView.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalErrorImages.getResourceId(randomSecondAnimalPosition, -1), null));
                 animalErrorImages.recycle();
-                showSnackbar(view.getRootView());
+                displayIncorrectSnackbar(view.getRootView());
             }
         });
     }
 
-    private void showSnackbar (final View view) {
-        Snackbar snackbar = Snackbar
-                .make(view.findViewById(R.id.constraint_activity_main_game), "CORRECT", Snackbar.LENGTH_LONG);
+    private void configCorrectAnimalImage(final ImageView imageView,
+                                          final TypedArray animalImages,
+                                          final int correctAnimalResourcePosition) {
+        imageView.setImageDrawable(getDrawable(animalImages, correctAnimalResourcePosition));
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayCorrectSnackbar(view.getRootView());
+//                try {
+//                    Thread.sleep(2000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+                mainActivityInterface.restartGame();
+            }
+        });
+    }
 
-        snackbar.setActionTextColor(Color.YELLOW);
+    private void showSnackbar (final View view, final String displayText, final int color) {
+        Snackbar snackbar = Snackbar
+                .make(view.findViewById(R.id.constraint_activity_main_game), displayText, Snackbar.LENGTH_SHORT);
+
+        snackbar.setActionTextColor(color);
         snackbar.show();
+    }
+
+    private void displayCorrectSnackbar (final View view) {
+        showSnackbar(view, "CORRECT", Color.GREEN);
+    }
+
+    private void displayIncorrectSnackbar (final View view) {
+        showSnackbar(view, "TRY AGAIN!", Color.RED);
     }
 }
