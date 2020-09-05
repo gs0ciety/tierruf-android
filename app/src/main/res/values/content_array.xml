@@ -120,4 +120,34 @@
         <item>@drawable/img_whale_error</item>
         <item>@drawable/img_wolf_error</item>
     </array>
+    <array name="animal_names">
+        <item>@string/name_bear</item>
+        <item>@string/name_bee</item>
+        <item>@string/name_camel</item>
+        <item>@string/name_cat</item>
+        <item>@string/name_cow</item>
+        <item>@string/name_dog</item>
+        <item>@string/name_dolphin</item>
+        <item>@string/name_duck</item>
+        <item>@string/name_eagle</item>
+        <item>@string/name_elephant</item>
+        <item>@string/name_frog</item>
+        <item>@string/name_goat</item>
+        <item>@string/name_horse</item>
+        <item>@string/name_lion</item>
+        <item>@string/name_monkey</item>
+        <item>@string/name_mouse</item>
+        <item>@string/name_owl</item>
+        <item>@string/name_penguin</item>
+        <item>@string/name_pig</item>
+        <item>@string/name_pigeon</item>
+        <item>@string/name_rooster</item>
+        <item>@string/name_seal</item>
+        <item>@string/name_sheep</item>
+        <item>@string/name_snake</item>
+        <item>@string/name_tiger</item>
+        <item>@string/name_toucan</item>
+        <item>@string/name_whale</item>
+        <item>@string/name_wolf</item>
+    </array>
 </resources>

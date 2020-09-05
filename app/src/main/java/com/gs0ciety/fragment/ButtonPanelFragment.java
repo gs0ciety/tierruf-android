@@ -31,12 +31,14 @@ public class ButtonPanelFragment extends Fragment {
 
         final TypedArray animalImages = getResources().obtainTypedArray(R.array.animal_images_drawables);
         final TypedArray animalSounds = getResources().obtainTypedArray(R.array.animal_sounds_drawables);
+        final TypedArray animalNames = getResources().obtainTypedArray(R.array.animal_names);
         for (int i = 0; i < animalImages.length() - 1  ; i++) {
             // get resource ID by index
-            animalItemList.add(new AnimalItem("", animalImages.getResourceId(i, -1), animalSounds.getResourceId(i, -1)));
+            animalItemList.add(new AnimalItem(animalNames.getString(i), animalImages.getResourceId(i, -1), animalSounds.getResourceId(i, -1)));
         }
         // recycle the arrays
         animalImages.recycle();
+        animalNames.recycle();
         animalSounds.recycle();
 
         final GridLayoutManager folderLayoutManager = new GridLayoutManager(getContext(), 3, RecyclerView.VERTICAL, false);
