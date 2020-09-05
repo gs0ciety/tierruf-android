@@ -2,36 +2,122 @@
 <resources>
     <array name="animal_images_drawables">
         <item>@drawable/img_bear</item>
+        <item>@drawable/img_bee</item>
+        <item>@drawable/img_camel</item>
         <item>@drawable/img_cat</item>
         <item>@drawable/img_cow</item>
         <item>@drawable/img_dog</item>
+        <item>@drawable/img_dolphin</item>
         <item>@drawable/img_duck</item>
+        <item>@drawable/img_eagle</item>
         <item>@drawable/img_elephant</item>
         <item>@drawable/img_frog</item>
+        <item>@drawable/img_goat</item>
         <item>@drawable/img_horse</item>
         <item>@drawable/img_lion</item>
         <item>@drawable/img_monkey</item>
+        <item>@drawable/img_mouse</item>
+        <item>@drawable/img_owl</item>
+        <item>@drawable/img_penguin</item>
         <item>@drawable/img_pig</item>
+        <item>@drawable/img_pigeon</item>
         <item>@drawable/img_rooster</item>
+        <item>@drawable/img_seal</item>
         <item>@drawable/img_sheep</item>
         <item>@drawable/img_snake</item>
+        <item>@drawable/img_tiger</item>
+        <item>@drawable/img_toucan</item>
+        <item>@drawable/img_whale</item>
         <item>@drawable/img_wolf</item>
     </array>
     <array name="animal_sounds_drawables">
         <item>@raw/bear</item>
+        <item>@raw/bee</item>
+        <item>@raw/camel</item>
         <item>@raw/cat</item>
         <item>@raw/cow</item>
         <item>@raw/dog</item>
+        <item>@raw/dolphin</item>
         <item>@raw/duck</item>
+        <item>@raw/eagle</item>
         <item>@raw/elephant</item>
         <item>@raw/frog</item>
+        <item>@raw/goat</item>
         <item>@raw/horse</item>
         <item>@raw/lion</item>
         <item>@raw/monkey</item>
+        <item>@raw/mouse</item>
+        <item>@raw/owl</item>
+        <item>@raw/penguin</item>
         <item>@raw/pig</item>
+        <item>@raw/pigeon</item>
         <item>@raw/rooster</item>
+        <item>@raw/seal</item>
         <item>@raw/sheep</item>
         <item>@raw/snake</item>
+        <item>@raw/tiger</item>
+        <item>@raw/toucan</item>
+        <item>@raw/whale</item>
         <item>@raw/wolf</item>
+    </array>
+    <array name="animal_hidden_drawables">
+        <item>@drawable/img_bear_hidden</item>
+        <item>@drawable/img_bee_hidden</item>
+        <item>@drawable/img_camel_hidden</item>
+        <item>@drawable/img_cat_hidden</item>
+        <item>@drawable/img_cow_hidden</item>
+        <item>@drawable/img_dog_hidden</item>
+        <item>@drawable/img_dolphin_hidden</item>
+        <item>@drawable/img_duck_hidden</item>
+        <item>@drawable/img_eagle_hidden</item>
+        <item>@drawable/img_elephant_hidden</item>
+        <item>@drawable/img_frog_hidden</item>
+        <item>@drawable/img_goat_hidden</item>
+        <item>@drawable/img_horse_hidden</item>
+        <item>@drawable/img_lion_hidden</item>
+        <item>@drawable/img_monkey_hidden</item>
+        <item>@drawable/img_mouse_hidden</item>
+        <item>@drawable/img_owl_hidden</item>
+        <item>@drawable/img_penguin_hidden</item>
+        <item>@drawable/img_pig_hidden</item>
+        <item>@drawable/img_pigeon_hidden</item>
+        <item>@drawable/img_rooster_hidden</item>
+        <item>@drawable/img_seal_hidden</item>
+        <item>@drawable/img_sheep_hidden</item>
+        <item>@drawable/img_snake_hidden</item>
+        <item>@drawable/img_tiger_hidden</item>
+        <item>@drawable/img_toucan_hidden</item>
+        <item>@drawable/img_whale_hidden</item>
+        <item>@drawable/img_wolf_hidden</item>
+    </array>
+    <array name="animal_error_drawables">
+        <item>@drawable/img_bear_error</item>
+        <item>@drawable/img_bee_error</item>
+        <item>@drawable/img_camel_error</item>
+        <item>@drawable/img_cat_error</item>
+        <item>@drawable/img_cow_error</item>
+        <item>@drawable/img_dog_error</item>
+        <item>@drawable/img_dolphin_error</item>
+        <item>@drawable/img_duck_error</item>
+        <item>@drawable/img_eagle_error</item>
+        <item>@drawable/img_elephant_error</item>
+        <item>@drawable/img_frog_error</item>
+        <item>@drawable/img_goat_error</item>
+        <item>@drawable/img_horse_error</item>
+        <item>@drawable/img_lion_error</item>
+        <item>@drawable/img_monkey_error</item>
+        <item>@drawable/img_mouse_error</item>
+        <item>@drawable/img_owl_error</item>
+        <item>@drawable/img_penguin_error</item>
+        <item>@drawable/img_pig_error</item>
+        <item>@drawable/img_pigeon_error</item>
+        <item>@drawable/img_rooster_error</item>
+        <item>@drawable/img_seal_error</item>
+        <item>@drawable/img_sheep_error</item>
+        <item>@drawable/img_snake_error</item>
+        <item>@drawable/img_tiger_error</item>
+        <item>@drawable/img_toucan_error</item>
+        <item>@drawable/img_whale_error</item>
+        <item>@drawable/img_wolf_error</item>
     </array>
 </resources>
