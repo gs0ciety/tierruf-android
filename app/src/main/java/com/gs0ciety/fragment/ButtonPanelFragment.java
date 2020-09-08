@@ -1,26 +1,34 @@
 package com.gs0ciety.fragment;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gs0ciety.activity.R;
 import com.gs0ciety.adapter.ButtonPanelAdapter;
+import com.gs0ciety.adapter.LanguageListAdapter;
+import com.gs0ciety.listeners.OnSwipeTouchListener;
 import com.gs0ciety.model.AnimalItem;
+import com.gs0ciety.model.LanguageItem;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class ButtonPanelFragment extends Fragment {
 
+    @SuppressLint("ClickableViewAccessibility")
     @Nullable
     @Override
     public View onCreateView(final @NonNull LayoutInflater inflater,
@@ -44,6 +52,34 @@ public class ButtonPanelFragment extends Fragment {
         final GridLayoutManager folderLayoutManager = new GridLayoutManager(getContext(), 3, RecyclerView.VERTICAL, false);
         gridRecycler.setLayoutManager(folderLayoutManager);
         gridRecycler.setAdapter(new ButtonPanelAdapter(getContext(), animalItemList));
+
+        gridRecycler.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
+            @Override
+            public void onSwipeRight() {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                final View dialogLayout = getLayoutInflater().inflate(R.layout.dialog_select_language, null);
+                final List<LanguageItem> languageItems = new LinkedList<>();
+                final TypedArray languages = getResources().obtainTypedArray(R.array.languages);
+                final TypedArray countryFlags = getResources().obtainTypedArray(R.array.country_flags);
+                for (int i = 0; i < languages.length() ; i++) {
+                    // get resource ID by index
+                    languageItems.add(new LanguageItem(languages.getString(i), countryFlags.getResourceId(i, -1)));
+                }
+                final RecyclerView recyclerLanguages = dialogLayout.findViewById(R.id.recycler_languages);
+                final LinearLayoutManager folderLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
+                recyclerLanguages.setLayoutManager(folderLayoutManager);
+                recyclerLanguages.setAdapter(new LanguageListAdapter(getContext(), languageItems));
+                builder.setView(dialogLayout);
+                final AlertDialog alertDialog = builder.create();
+                languages.recycle();
+                alertDialog.show();
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                Toast.makeText(getContext(), "left", Toast.LENGTH_SHORT).show();
+            }
+        });
         return gridRecycler;
     }
 }

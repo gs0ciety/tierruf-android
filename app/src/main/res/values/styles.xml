@@ -8,4 +8,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
+    <style name="AlertDialog_Theme" parent="Theme.AppCompat.Light.NoActionBar">      //no actionbar, but status bar exists
+        <item name="android:windowFullscreen">true</item>                                       //remove status bar
+        <item name="colorAccent">#FFFFFF</item>                                                 //change button text color
+        <item name="android:layout_gravity">center</item>
+    </style>
+
 </resources>

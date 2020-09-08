@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">botonera de animales</string>
-    <string name="correct">CORRECTO!</string>
     <string name="incorrect">INTENTA NUEVAMENTE!</string>
 
     <string name="bear">OSO</string>
@@ -31,4 +30,10 @@
     <string name="toucan">TUCÁN</string>
     <string name="whale">BALLENA</string>
     <string name="wolf">LOBO</string>
+
+    <string name="title_language_dialog">¡Juega en otros idiomas!</string>
+    <string name="spanish_language">Español</string>
+    <string name="english_language">Inglés</string>
+    <string name="portuguese_language">Portugués</string>
+
 </resources>

@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">animal buttons panel</string>
-    <string name="correct">CORRECT!</string>
     <string name="incorrect">TRY AGAIN!</string>
 
     <string name="bear">BEAR</string>
@@ -31,4 +30,10 @@
     <string name="toucan">TOUCAN</string>
     <string name="whale">WHALE</string>
     <string name="wolf">WOLF</string>
+
+    <string name="title_language_dialog">Play in other language!</string>
+    <string name="spanish_language">Spanish</string>
+    <string name="english_language">English</string>
+    <string name="portuguese_language">Portuguese</string>
+
 </resources>

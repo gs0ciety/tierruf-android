@@ -1,12 +1,16 @@
 package com.gs0ciety.fragment;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.Gravity;
@@ -25,7 +29,6 @@ import com.gs0ciety.Types.GameModeTypes;
 import com.gs0ciety.activity.R;
 import com.gs0ciety.interfaces.MainActivityInterface;
 
-import java.lang.reflect.Type;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -229,7 +232,22 @@ public class GameFragment extends Fragment {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                displayCorrectSnackbar(view.getRootView());
+                final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                final LayoutInflater inflater = getLayoutInflater();
+                final View dialogLayout = inflater.inflate(R.layout.dialog_success, null);
+                builder.setCancelable(false).setCancelable(false);
+                builder.setView(dialogLayout);
+                final AlertDialog alertDialog = builder.create();
+                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                alertDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (alertDialog.isShowing()){
+                            alertDialog.dismiss();
+                        }
+                    }
+                }, 3000);
                 mainActivityInterface.restartGame();
             }
         });
@@ -252,10 +270,6 @@ public class GameFragment extends Fragment {
         snackbar.setActionTextColor(getResources().getColor(R.color.colorTextLight));
         snackbar.setBackgroundTint(color);
         snackbar.show();
-    }
-
-    private void displayCorrectSnackbar (final View view) {
-        showSnackbar(view, getResources().getString(R.string.correct), getResources().getColor(R.color.colorCorrectBackground));
     }
 
     private void displayIncorrectSnackbar (final View view) {
