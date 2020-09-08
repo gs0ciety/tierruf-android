@@ -30,7 +30,7 @@
         <item>@drawable/img_whale</item>
         <item>@drawable/img_wolf</item>
     </array>
-    <array name="animal_sounds_drawables">
+    <array name="animal_sounds">
         <item>@raw/bear</item>
         <item>@raw/bee</item>
         <item>@raw/camel</item>
@@ -121,33 +121,33 @@
         <item>@drawable/img_wolf_error</item>
     </array>
     <array name="animal_names">
-        <item>@string/name_bear</item>
-        <item>@string/name_bee</item>
-        <item>@string/name_camel</item>
-        <item>@string/name_cat</item>
-        <item>@string/name_cow</item>
-        <item>@string/name_dog</item>
-        <item>@string/name_dolphin</item>
-        <item>@string/name_duck</item>
-        <item>@string/name_eagle</item>
-        <item>@string/name_elephant</item>
-        <item>@string/name_frog</item>
-        <item>@string/name_goat</item>
-        <item>@string/name_horse</item>
-        <item>@string/name_lion</item>
-        <item>@string/name_monkey</item>
-        <item>@string/name_mouse</item>
-        <item>@string/name_owl</item>
-        <item>@string/name_penguin</item>
-        <item>@string/name_pig</item>
-        <item>@string/name_pigeon</item>
-        <item>@string/name_rooster</item>
-        <item>@string/name_seal</item>
-        <item>@string/name_sheep</item>
-        <item>@string/name_snake</item>
-        <item>@string/name_tiger</item>
-        <item>@string/name_toucan</item>
-        <item>@string/name_whale</item>
-        <item>@string/name_wolf</item>
+        <item>@string/bear</item>
+        <item>@string/bee</item>
+        <item>@string/camel</item>
+        <item>@string/cat</item>
+        <item>@string/cow</item>
+        <item>@string/dog</item>
+        <item>@string/dolphin</item>
+        <item>@string/duck</item>
+        <item>@string/eagle</item>
+        <item>@string/elephant</item>
+        <item>@string/frog</item>
+        <item>@string/goat</item>
+        <item>@string/horse</item>
+        <item>@string/lion</item>
+        <item>@string/monkey</item>
+        <item>@string/mouse</item>
+        <item>@string/owl</item>
+        <item>@string/penguin</item>
+        <item>@string/pig</item>
+        <item>@string/pigeon</item>
+        <item>@string/rooster</item>
+        <item>@string/seal</item>
+        <item>@string/sheep</item>
+        <item>@string/snake</item>
+        <item>@string/tiger</item>
+        <item>@string/toucan</item>
+        <item>@string/whale</item>
+        <item>@string/wolf</item>
     </array>
 </resources>
