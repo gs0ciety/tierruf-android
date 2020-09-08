@@ -1,9 +1,18 @@
 package com.gs0ciety.activity;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -32,7 +41,40 @@ public class MainActivity extends AppCompatActivity {
         questionButton = findViewById(R.id.btn_animal_question);
         soundButton = findViewById(R.id.btn_animal_sound);
         nameButton = findViewById(R.id.btn_animal_name);
+
         loadFragment(new ButtonPanelFragment());
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog_Theme);
+        final LayoutInflater inflater = getLayoutInflater();
+        final View dialogLayout = inflater.inflate(R.layout.dialog_tutorial, null);
+        builder.setCancelable(false).setCancelable(false);
+        builder.setView(dialogLayout);
+        builder.setPositiveButton("SKIP", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(final DialogInterface dialog, int which) {
+                // Do nothing!
+            }
+        });
+        final AlertDialog alertDialog = builder.create();
+        final ColorDrawable colorDrawable = new ColorDrawable(Color.BLACK);
+        colorDrawable.setAlpha(170);
+        alertDialog.getWindow().setBackgroundDrawable(colorDrawable);
+        alertDialog.show();
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                if (alertDialog.isShowing()){
+//                    alertDialog.dismiss();
+//                }
+//            }
+//        }, 10000);
+
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull String name, @NonNull Context context, @NonNull AttributeSet attrs) {
+        return super.onCreateView(name, context, attrs);
     }
 
     public void onClickPanelButton(final View view) {
