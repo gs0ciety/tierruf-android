@@ -3,6 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gs0ciety.activity">
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"

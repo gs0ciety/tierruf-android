@@ -1,10 +1,13 @@
 package com.gs0ciety.fragment;
 
+import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -225,7 +228,7 @@ public class GameFragment extends Fragment {
         } else {
             textViewSnackbar.setGravity(Gravity.CENTER_HORIZONTAL);
         }
-        
+
         textViewSnackbar.setTypeface(Typeface.DEFAULT_BOLD);
         snackbar.setActionTextColor(getResources().getColor(R.color.colorTextLight));
         snackbar.setBackgroundTint(color);
@@ -238,5 +241,17 @@ public class GameFragment extends Fragment {
 
     private void displayIncorrectSnackbar (final View view) {
         showSnackbar(view, getResources().getString(R.string.incorrect), getResources().getColor(R.color.colorIncorrectBackground));
+        vibration();
+    }
+
+    private void vibration() {
+        Vibrator v = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+        // Vibrate for 500 milliseconds
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+            //deprecated in API 26
+            v.vibrate(500);
+        }
     }
 }
