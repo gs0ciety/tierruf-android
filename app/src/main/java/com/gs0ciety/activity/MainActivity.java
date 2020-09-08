@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.gs0ciety.fragment.GameFragment;
 import com.gs0ciety.fragment.ButtonPanelFragment;
+import com.gs0ciety.fragment.GameFragment;
 import com.gs0ciety.interfaces.MainActivityInterface;
 import com.gs0ciety.utils.GameFragmentLauncherUtils;
 
