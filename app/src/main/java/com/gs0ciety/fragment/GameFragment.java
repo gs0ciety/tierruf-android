@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -19,10 +20,12 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.gs0ciety.Types.BuildParamTypes;
 import com.gs0ciety.Types.GameModeTypes;
 import com.gs0ciety.activity.R;
 import com.gs0ciety.interfaces.MainActivityInterface;
 
+import java.lang.reflect.Type;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -45,7 +48,7 @@ public class GameFragment extends Fragment {
                              final ViewGroup container,
                              final Bundle savedInstanceState) {
         Bundle bundle = this.getArguments();
-        final String gameMode = bundle.getString(GameModeTypes.GAME_MODE);
+        final String gameMode = bundle.getString(BuildParamTypes.GAME_MODE);
 
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_game, container, false);
@@ -58,22 +61,39 @@ public class GameFragment extends Fragment {
         final TypedArray animalImages = getResources().obtainTypedArray(R.array.animal_images_drawables);
         final int correctAnimalResourcePosition = getRandomCorrectAnimalPosition(lastCorrectAnimalsUsed, animalImages.length());
 
-        final TypedArray mainAnimalArray;
-
         switch (gameMode) {
             default:
             case GameModeTypes.SHAPE:
-                mainAnimalArray = getResources().obtainTypedArray(R.array.animal_hidden_drawables);
-                mainAnimal.setImageDrawable(ResourcesCompat.getDrawable(getResources(), mainAnimalArray.getResourceId(correctAnimalResourcePosition, -1), null));
+                final TypedArray mainShapeAnimalArray = getResources().obtainTypedArray(R.array.animal_hidden_drawables);
+                mainAnimal.setImageDrawable(ResourcesCompat.getDrawable(getResources(), mainShapeAnimalArray.getResourceId(correctAnimalResourcePosition, -1), null));
+                mainAnimal.setVisibility(View.VISIBLE);
+                mainShapeAnimalArray.recycle();
                 break;
             case GameModeTypes.SOUND:
-                mainAnimalArray = getResources().obtainTypedArray(R.array.animal_sounds_drawables);
                 mainAnimal.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_play_circle_outline, null));
+                mainAnimal.setVisibility(View.VISIBLE);
+                mainAnimal.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        final TypedArray mainSoundAnimalArray = getResources().obtainTypedArray(R.array.animal_sounds);
+                        final MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), mainSoundAnimalArray.getResourceId(correctAnimalResourcePosition, -1));
+                        mediaPlayer.start();
+                        mainSoundAnimalArray.recycle();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(final MediaPlayer mp) {
+                                mp.release();
+                            }
+                        });
+                    }
+                });
                 break;
             case GameModeTypes.WORDS:
-                mainAnimalArray = getResources().obtainTypedArray(R.array.animal_strings);
-                mainAnimalText.setText(mainAnimalArray.getString(correctAnimalResourcePosition));
+                final TypedArray mainWordAnimalArray = getResources().obtainTypedArray(R.array.animal_names);
+                mainAnimalText.setText(mainWordAnimalArray.getString(correctAnimalResourcePosition));
                 mainAnimalText.setVisibility(View.VISIBLE);
+                mainAnimal.setVisibility(View.INVISIBLE);
+                mainWordAnimalArray.recycle();
                 break;
         }
 
@@ -133,7 +153,6 @@ public class GameFragment extends Fragment {
 
         // recycle the arrays
         animalImages.recycle();
-        mainAnimalArray.recycle();
 
         return view;
     }
@@ -245,13 +264,13 @@ public class GameFragment extends Fragment {
     }
 
     private void vibration() {
-        Vibrator v = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+        Vibrator vibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
         // Vibrate for 500 milliseconds
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+            vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
         } else {
             //deprecated in API 26
-            v.vibrate(500);
+            vibrator.vibrate(500);
         }
     }
 }

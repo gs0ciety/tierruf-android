@@ -30,7 +30,7 @@
         <item>@drawable/img_whale</item>
         <item>@drawable/img_wolf</item>
     </array>
-    <array name="animal_sounds_drawables">
+    <array name="animal_sounds">
         <item>@raw/bear</item>
         <item>@raw/bee</item>
         <item>@raw/camel</item>
@@ -120,7 +120,7 @@
         <item>@drawable/img_whale_error</item>
         <item>@drawable/img_wolf_error</item>
     </array>
-    <array name="animal_strings">
+    <array name="animal_names">
         <item>@string/bear</item>
         <item>@string/bee</item>
         <item>@string/camel</item>

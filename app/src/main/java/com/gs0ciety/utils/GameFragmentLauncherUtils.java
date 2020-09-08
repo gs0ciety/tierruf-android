@@ -2,6 +2,7 @@ package com.gs0ciety.utils;
 
 import android.os.Bundle;
 
+import com.gs0ciety.Types.BuildParamTypes;
 import com.gs0ciety.Types.GameModeTypes;
 import com.gs0ciety.fragment.GameFragment;
 import com.gs0ciety.interfaces.MainActivityInterface;
@@ -23,7 +24,7 @@ public class GameFragmentLauncherUtils {
     private static GameFragment gameFragmentLauncher(final MainActivityInterface mainActivityInterface,
                                                      final String gameMode){
         Bundle bundle = new Bundle();
-        bundle.putString(GameModeTypes.GAME_MODE, gameMode);
+        bundle.putString(BuildParamTypes.GAME_MODE, gameMode);
         GameFragment gameFragment = new GameFragment(mainActivityInterface);
         gameFragment.setArguments(bundle);
         return gameFragment;

@@ -30,8 +30,8 @@ public class ButtonPanelFragment extends Fragment {
         final RecyclerView gridRecycler = (RecyclerView) inflater.inflate(R.layout.fragment_panel_button, container, false);
 
         final TypedArray animalImages = getResources().obtainTypedArray(R.array.animal_images_drawables);
-        final TypedArray animalSounds = getResources().obtainTypedArray(R.array.animal_sounds_drawables);
-        final TypedArray animalNames = getResources().obtainTypedArray(R.array.animal_strings);
+        final TypedArray animalSounds = getResources().obtainTypedArray(R.array.animal_sounds);
+        final TypedArray animalNames = getResources().obtainTypedArray(R.array.animal_names);
         for (int i = 0; i < animalImages.length() - 1  ; i++) {
             // get resource ID by index
             animalItemList.add(new AnimalItem(animalNames.getString(i), animalImages.getResourceId(i, -1), animalSounds.getResourceId(i, -1)));
