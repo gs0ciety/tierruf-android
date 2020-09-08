@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">botonera de animales</string>
+
+    <string name="bear">OSO</string>
+    <string name="bee">ABEJA</string>
+    <string name="camel">CAMELLO</string>
+    <string name="cat">GATO</string>
+    <string name="cow">VACA</string>
+    <string name="dog">PERRO</string>
+    <string name="dolphin">DELFÍN</string>
+    <string name="duck">PATO</string>
+    <string name="eagle">AGUILA</string>
+    <string name="elephant">ELEFANTE</string>
+    <string name="frog">RANA</string>
+    <string name="goat">CABRA</string>
+    <string name="horse">CABALLO</string>
+    <string name="lion">LEÓN</string>
+    <string name="monkey">MONO</string>
+    <string name="mouse">RATÓN</string>
+    <string name="owl">BÚHO</string>
+    <string name="penguin">PINGÜINO</string>
+    <string name="pig">CERDO</string>
+    <string name="pigeon">PALOMA</string>
+    <string name="rooster">GALLO</string>
+    <string name="seal">FOCA</string>
+    <string name="sheep">OVEJA</string>
+    <string name="snake">SERPIENTE</string>
+    <string name="tiger">TIGRE</string>
+    <string name="toucan">TUCÁN</string>
+    <string name="whale">BALLENA</string>
+    <string name="wolf">LOBO</string>
+</resources>

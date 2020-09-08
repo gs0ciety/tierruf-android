@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">animal buttons panel</string>
+
+    <string name="bear">BEAR</string>
+    <string name="bee">BEE</string>
+    <string name="camel">CAMEL</string>
+    <string name="cat">CAT</string>
+    <string name="cow">COW</string>
+    <string name="dog">DOG</string>
+    <string name="dolphin">DOLPHIN</string>
+    <string name="duck">DUCK</string>
+    <string name="eagle">EAGLE</string>
+    <string name="elephant">ELEPHANT</string>
+    <string name="frog">FROG</string>
+    <string name="goat">GOAT</string>
+    <string name="horse">HORSE</string>
+    <string name="lion">LION</string>
+    <string name="monkey">MONKEY</string>
+    <string name="mouse">MOUSE</string>
+    <string name="owl">OWL</string>
+    <string name="penguin">PENGUIN</string>
+    <string name="pig">PIG</string>
+    <string name="pigeon">PIGEON</string>
+    <string name="rooster">ROOSTER</string>
+    <string name="seal">SEAL</string>
+    <string name="sheep">SHEEP</string>
+    <string name="snake">SNAKE</string>
+    <string name="tiger">TIGER</string>
+    <string name="toucan">TOUCAN</string>
+    <string name="whale">WHALE</string>
+    <string name="wolf">WOLF</string>
 </resources>

@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.gs0ciety.Types.GameModeTypes;
 import com.gs0ciety.activity.R;
 import com.gs0ciety.interfaces.MainActivityInterface;
 
@@ -31,10 +33,15 @@ public class GameFragment extends Fragment {
     private ImageView firstAnimalOption, secondAnimalOption, thirdAnimalOption, fourthAnimalOption,
         fifthAnimalOption, sixthAnimalOption, mainAnimal;
 
+    private TextView mainAnimalText;
+
     @Override
     public View onCreateView(final LayoutInflater inflater,
                              final ViewGroup container,
                              final Bundle savedInstanceState) {
+        Bundle bundle = this.getArguments();
+        final String gameMode = bundle.getString(GameModeTypes.GAME_MODE);
+
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_game, container, false);
         initUiElements(view);
@@ -44,10 +51,27 @@ public class GameFragment extends Fragment {
         final Set<Integer> lastCorrectOptionsUsed = new HashSet<>();
 
         final TypedArray animalImages = getResources().obtainTypedArray(R.array.animal_images_drawables);
-        final TypedArray animalHiddenImages = getResources().obtainTypedArray(R.array.animal_hidden_drawables);
-
         final int correctAnimalResourcePosition = getRandomCorrectAnimalPosition(lastCorrectAnimalsUsed, animalImages.length());
-        mainAnimal.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalHiddenImages.getResourceId(correctAnimalResourcePosition, -1), null));
+
+        final TypedArray mainAnimalArray;
+
+        switch (gameMode) {
+            default:
+            case GameModeTypes.SHAPE:
+                mainAnimalArray = getResources().obtainTypedArray(R.array.animal_hidden_drawables);
+                mainAnimal.setImageDrawable(ResourcesCompat.getDrawable(getResources(), mainAnimalArray.getResourceId(correctAnimalResourcePosition, -1), null));
+                break;
+            case GameModeTypes.SOUND:
+                mainAnimalArray = getResources().obtainTypedArray(R.array.animal_sounds_drawables);
+                mainAnimal.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_play_circle_outline, null));
+                break;
+            case GameModeTypes.WORDS:
+                mainAnimalArray = getResources().obtainTypedArray(R.array.animal_strings);
+                mainAnimalText.setText(mainAnimalArray.getString(correctAnimalResourcePosition));
+                mainAnimalText.setVisibility(View.VISIBLE);
+                break;
+        }
+
 
         int option = getMainAnimalPositionUsed(lastCorrectOptionsUsed, 6);
         switch (option) {
@@ -104,7 +128,7 @@ public class GameFragment extends Fragment {
 
         // recycle the arrays
         animalImages.recycle();
-        animalHiddenImages.recycle();
+        mainAnimalArray.recycle();
 
         return view;
     }
@@ -148,6 +172,8 @@ public class GameFragment extends Fragment {
         fifthAnimalOption = view.findViewById(R.id.game_animal_option_5);
         sixthAnimalOption = view.findViewById(R.id.game_animal_option_6);
         mainAnimal = view.findViewById(R.id.img_main_game_animal);
+        mainAnimalText = view.findViewById(R.id.textViewMainAnimal);
+        mainAnimalText.setVisibility(View.GONE);
     }
 
     private Drawable getDrawable(final TypedArray animalImages,
@@ -180,11 +206,6 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 displayCorrectSnackbar(view.getRootView());
-//                try {
-//                    Thread.sleep(2000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
                 mainActivityInterface.restartGame();
             }
         });

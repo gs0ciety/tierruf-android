@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.gs0ciety.fragment.GameFragment;
 import com.gs0ciety.fragment.ButtonPanelFragment;
 import com.gs0ciety.interfaces.MainActivityInterface;
+import com.gs0ciety.utils.GameFragmentLauncherUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         questionButton.setAlpha(0.7f);
         nameIndicator.setAlpha(0f);
         nameButton.setAlpha(0.7f);
+        loadFragment(GameFragmentLauncherUtils.soundGameLauncher(initMainActivityInterface()));
     }
 
     public void onClickQuestionButton(final View view) {
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         soundButton.setAlpha(0.7f);
         nameIndicator.setAlpha(0f);
         nameButton.setAlpha(0.7f);
-        loadFragment(new GameFragment(initMainActivityInterface()));
+        loadFragment(GameFragmentLauncherUtils.shapeGameLauncher(initMainActivityInterface()));
     }
 
     public void onClickNameButton(final View view) {
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         questionButton.setAlpha(0.7f);
         soundIndicator.setAlpha(0f);
         soundButton.setAlpha(0.7f);
+        loadFragment(GameFragmentLauncherUtils.wordsGameLauncher(initMainActivityInterface()));
     }
 
     private void loadFragment(final Fragment fragment) {
