@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">animal buttons panel</string>
+    <string name="correct">CORRECT!</string>
+    <string name="incorrect">TRY AGAIN!</string>
 
     <string name="bear">BEAR</string>
     <string name="bee">BEE</string>

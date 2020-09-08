@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">botonera de animales</string>
+    <string name="correct">CORRECTO!</string>
+    <string name="incorrect">INTENTA NUEVAMENTE!</string>
 
     <string name="bear">OSO</string>
     <string name="bee">ABEJA</string>

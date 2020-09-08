@@ -1,9 +1,11 @@
 package com.gs0ciety.fragment;
 
 import android.content.res.TypedArray;
-import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -215,15 +217,26 @@ public class GameFragment extends Fragment {
         Snackbar snackbar = Snackbar
                 .make(view.findViewById(R.id.constraint_activity_main_game), displayText, Snackbar.LENGTH_SHORT);
 
-        snackbar.setActionTextColor(color);
+        View viewSnackbar = snackbar.getView();
+        TextView textViewSnackbar = viewSnackbar.findViewById(com.google.android.material.R.id.snackbar_text);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            textViewSnackbar.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        } else {
+            textViewSnackbar.setGravity(Gravity.CENTER_HORIZONTAL);
+        }
+        
+        textViewSnackbar.setTypeface(Typeface.DEFAULT_BOLD);
+        snackbar.setActionTextColor(getResources().getColor(R.color.colorTextLight));
+        snackbar.setBackgroundTint(color);
         snackbar.show();
     }
 
     private void displayCorrectSnackbar (final View view) {
-        showSnackbar(view, "CORRECT", Color.GREEN);
+        showSnackbar(view, getResources().getString(R.string.correct), getResources().getColor(R.color.colorCorrectBackground));
     }
 
     private void displayIncorrectSnackbar (final View view) {
-        showSnackbar(view, "TRY AGAIN!", Color.RED);
+        showSnackbar(view, getResources().getString(R.string.incorrect), getResources().getColor(R.color.colorIncorrectBackground));
     }
 }
