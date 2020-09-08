@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
@@ -37,13 +38,9 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-//      final AnimalItem itemPicture = animalItemList.get(getItemCount() - i - 1);
-
-        ResourcesCompat.getDrawable(context.getResources(), animalItemList.get(i).getImageResId(), null);
-
         // set image based on selected text
-        viewHolder.animalImage.setImageDrawable(context.getResources().getDrawable(animalItemList.get(i).getImageResId()));
-
+        viewHolder.animalImage.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(), animalItemList.get(i).getImageResId(), null));
+        viewHolder.animalName.setText(animalItemList.get(i).getName());
         viewHolder.animalImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
@@ -72,12 +69,12 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
     static final class ViewHolder extends RecyclerView.ViewHolder {
 
         final ImageView animalImage;
+        final TextView animalName;
 
         ViewHolder(@NonNull final View itemView) {
             super(itemView);
-            //USER IMAGE TO BE SHOWN
             animalImage = itemView.findViewById(R.id.grid_item_animal_picture);
-            //SELECTED OVERLAY
+            animalName = itemView.findViewById(R.id.grid_item_animal_name);
         }
     }
 }
