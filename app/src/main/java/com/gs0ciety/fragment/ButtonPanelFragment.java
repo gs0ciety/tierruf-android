@@ -65,13 +65,14 @@ public class ButtonPanelFragment extends Fragment {
                     // get resource ID by index
                     languageItems.add(new LanguageItem(languages.getString(i), countryFlags.getResourceId(i, -1)));
                 }
+                languages.recycle();
+                countryFlags.recycle();
                 final RecyclerView recyclerLanguages = dialogLayout.findViewById(R.id.recycler_languages);
                 final LinearLayoutManager folderLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
                 recyclerLanguages.setLayoutManager(folderLayoutManager);
                 recyclerLanguages.setAdapter(new LanguageListAdapter(getContext(), languageItems));
                 builder.setView(dialogLayout);
                 final AlertDialog alertDialog = builder.create();
-                languages.recycle();
                 alertDialog.show();
             }
 

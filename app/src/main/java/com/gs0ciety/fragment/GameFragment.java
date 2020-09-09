@@ -272,7 +272,7 @@ public class GameFragment extends Fragment {
         snackbar.show();
     }
 
-    private void displayIncorrectSnackbar (final View view) {
+    private void displayIncorrectSnackbar(final View view) {
         showSnackbar(view, getResources().getString(R.string.incorrect), getResources().getColor(R.color.colorIncorrectBackground));
         vibration();
     }

@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.gs0ciety.activity.R;
 import com.gs0ciety.model.AnimalItem;
 
@@ -34,7 +35,6 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
                 .inflate(R.layout.item_animal, viewGroup, false));
     }
 
-
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
@@ -43,12 +43,17 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
         viewHolder.animalName.setText(animalItemList.get(i).getName());
         viewHolder.animalImage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(final View v) {
+            public void onClick(final View view) {
                 final MediaPlayer mediaPlayer = MediaPlayer.create(context, animalItemList.get(i).getAudioResId());
+                viewHolder.lottieAnimationView.setVisibility(View.VISIBLE);
+                viewHolder.lottieAnimationView.setMinAndMaxProgress(0.2f, 0.4f);
                 mediaPlayer.start();
+                viewHolder.lottieAnimationView.playAnimation();
                 mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(final MediaPlayer mp) {
+                        viewHolder.lottieAnimationView.cancelAnimation();
+                        viewHolder.lottieAnimationView.setVisibility(View.INVISIBLE);
                         mp.release();
                     }
                 });
@@ -69,12 +74,14 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
     static final class ViewHolder extends RecyclerView.ViewHolder {
 
         final ImageView animalImage;
+        final LottieAnimationView lottieAnimationView;
         final TextView animalName;
 
         ViewHolder(@NonNull final View itemView) {
             super(itemView);
             animalImage = itemView.findViewById(R.id.grid_item_animal_picture);
             animalName = itemView.findViewById(R.id.grid_item_animal_name);
+            lottieAnimationView = itemView.findViewById(R.id.grid_item_animal_animation_sound);
         }
     }
 }
