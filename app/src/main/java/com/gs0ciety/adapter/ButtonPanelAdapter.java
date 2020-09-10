@@ -1,7 +1,6 @@
 package com.gs0ciety.adapter;
 
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gs0ciety.activity.R;
+import com.gs0ciety.interfaces.ButtonPanelBehaviours;
 import com.gs0ciety.model.AnimalItem;
 
 import java.util.List;
@@ -21,10 +21,14 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
 
     private Context context;
     private List<AnimalItem> animalItemList;
+    private ButtonPanelBehaviours buttonPanelBehaviours;
 
-    public ButtonPanelAdapter(final Context context, final List<AnimalItem> animalItemLists) {
+    public ButtonPanelAdapter(final Context context,
+                              final List<AnimalItem> animalItemLists,
+                              final ButtonPanelBehaviours buttonPanelBehaviours) {
         this.context = context;
         this.animalItemList = animalItemLists;
+        this.buttonPanelBehaviours = buttonPanelBehaviours;
     }
 
     @NonNull
@@ -44,14 +48,7 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
         viewHolder.animalImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                final MediaPlayer mediaPlayer = MediaPlayer.create(context, animalItemList.get(i).getAudioResId());
-                mediaPlayer.start();
-                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(final MediaPlayer mp) {
-                        mp.release();
-                    }
-                });
+                buttonPanelBehaviours.playSound(animalItemList.get(i).getAudioResId());
             }
         });
     }

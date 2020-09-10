@@ -3,12 +3,14 @@ package com.gs0ciety.fragment;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.res.TypedArray;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.IntegerRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -19,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.gs0ciety.activity.R;
 import com.gs0ciety.adapter.ButtonPanelAdapter;
 import com.gs0ciety.adapter.LanguageListAdapter;
+import com.gs0ciety.interfaces.ButtonPanelBehaviours;
 import com.gs0ciety.listeners.OnSwipeTouchListener;
 import com.gs0ciety.model.AnimalItem;
 import com.gs0ciety.model.LanguageItem;
@@ -27,6 +30,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ButtonPanelFragment extends Fragment {
+
+    private MediaPlayer mediaPlayer;
 
     @SuppressLint("ClickableViewAccessibility")
     @Nullable
@@ -51,7 +56,7 @@ public class ButtonPanelFragment extends Fragment {
 
         final GridLayoutManager folderLayoutManager = new GridLayoutManager(getContext(), 3, RecyclerView.VERTICAL, false);
         gridRecycler.setLayoutManager(folderLayoutManager);
-        gridRecycler.setAdapter(new ButtonPanelAdapter(getContext(), animalItemList));
+        gridRecycler.setAdapter(new ButtonPanelAdapter(getContext(), animalItemList, createButtonPanelBehaviours()));
 
         gridRecycler.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
             @Override
@@ -81,5 +86,35 @@ public class ButtonPanelFragment extends Fragment {
             }
         });
         return gridRecycler;
+    }
+
+    private ButtonPanelBehaviours createButtonPanelBehaviours() {
+        return new ButtonPanelBehaviours() {
+            @Override
+            public void playSound(final @IntegerRes int audioResId) {
+                stopActiveSound();
+                mediaPlayer = MediaPlayer.create(getContext(), audioResId);
+                mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(final MediaPlayer mp) {
+                        mp.release();
+                    }
+                });
+            }
+        };
+    }
+
+    @Override
+    public void onDestroy() {
+        stopActiveSound();
+        super.onDestroy();
+    }
+
+    private void stopActiveSound() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }

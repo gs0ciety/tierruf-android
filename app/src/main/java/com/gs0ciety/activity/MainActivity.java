@@ -18,7 +18,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.gs0ciety.fragment.ButtonPanelFragment;
-import com.gs0ciety.fragment.GameFragment;
 import com.gs0ciety.interfaces.MainActivityInterface;
 import com.gs0ciety.utils.GameFragmentLauncherUtils;
 
@@ -137,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
         return new MainActivityInterface() {
             @Override
             public void restartGame() {
-                Fragment frg = getSupportFragmentManager().findFragmentByTag("Your_Fragment_TAG");
+                final Fragment frg = getSupportFragmentManager().findFragmentByTag("Your_Fragment_TAG");
                 final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 ft.detach(frg);
                 ft.attach(frg);
@@ -145,6 +144,4 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
-
-
 }
