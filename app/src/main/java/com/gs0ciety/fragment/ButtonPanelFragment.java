@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.gs0ciety.activity.R;
 import com.gs0ciety.adapter.ButtonPanelAdapter;
 import com.gs0ciety.adapter.LanguageListAdapter;
@@ -70,6 +71,8 @@ public class ButtonPanelFragment extends Fragment {
                     // get resource ID by index
                     languageItems.add(new LanguageItem(languages.getString(i), countryFlags.getResourceId(i, -1)));
                 }
+                languages.recycle();
+                countryFlags.recycle();
                 final RecyclerView recyclerLanguages = dialogLayout.findViewById(R.id.recycler_languages);
                 final LinearLayoutManager folderLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
                 recyclerLanguages.setLayoutManager(folderLayoutManager);
@@ -92,14 +95,19 @@ public class ButtonPanelFragment extends Fragment {
     private ButtonPanelBehaviours createButtonPanelBehaviours() {
         return new ButtonPanelBehaviours() {
             @Override
-            public void playSound(final @IntegerRes int audioResId) {
+            public void playSound(final @IntegerRes int audioResId, final LottieAnimationView lottieAnimationView) {
                 stopActiveSound();
                 mediaPlayer = MediaPlayer.create(getContext(), audioResId);
+                lottieAnimationView.setVisibility(View.VISIBLE);
+                lottieAnimationView.setMinAndMaxProgress(0.2f, 0.4f);
+                lottieAnimationView.playAnimation();
                 mediaPlayer.start();
                 mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(final MediaPlayer mp) {
                         mp.release();
+                        lottieAnimationView.cancelAnimation();
+                        lottieAnimationView.setVisibility(View.INVISIBLE);
                     }
                 });
             }

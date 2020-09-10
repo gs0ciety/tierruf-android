@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.gs0ciety.activity.R;
 import com.gs0ciety.interfaces.ButtonPanelBehaviours;
 import com.gs0ciety.model.AnimalItem;
@@ -47,8 +48,8 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
         viewHolder.animalImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                buttonPanelBehaviours.playSound(animalItemList.get(i).getAudioResId());
-            }
+                    buttonPanelBehaviours.playSound(animalItemList.get(i).getAudioResId(), viewHolder.lottieAnimationView);
+                }
         });
     }
 
@@ -65,12 +66,14 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
     static final class ViewHolder extends RecyclerView.ViewHolder {
 
         final ImageView animalImage;
+        final LottieAnimationView lottieAnimationView;
         final TextView animalName;
 
         ViewHolder(@NonNull final View itemView) {
             super(itemView);
             animalImage = itemView.findViewById(R.id.grid_item_animal_picture);
             animalName = itemView.findViewById(R.id.grid_item_animal_name);
+            lottieAnimationView = itemView.findViewById(R.id.grid_item_animal_animation_sound);
         }
     }
 }
