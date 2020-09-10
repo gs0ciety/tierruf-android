@@ -3,6 +3,7 @@ package com.gs0ciety.activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -16,11 +17,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.gs0ciety.adapter.LanguageListAdapter;
 import com.gs0ciety.fragment.ButtonPanelFragment;
-import com.gs0ciety.fragment.GameFragment;
 import com.gs0ciety.interfaces.MainActivityInterface;
+import com.gs0ciety.listeners.OnSwipeTouchListener;
+import com.gs0ciety.model.LanguageItem;
 import com.gs0ciety.utils.GameFragmentLauncherUtils;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,26 +57,47 @@ public class MainActivity extends AppCompatActivity {
         final View dialogLayout = inflater.inflate(R.layout.dialog_tutorial, null);
         builder.setCancelable(false).setCancelable(false);
         builder.setView(dialogLayout);
-        builder.setPositiveButton("SKIP", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(final DialogInterface dialog, int which) {
                 // Do nothing!
             }
         });
-        final AlertDialog alertDialog = builder.create();
+        final AlertDialog tutorialAlertDialog = builder.create();
         final ColorDrawable colorDrawable = new ColorDrawable(Color.BLACK);
         colorDrawable.setAlpha(170);
-        alertDialog.getWindow().setBackgroundDrawable(colorDrawable);
-        alertDialog.show();
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                if (alertDialog.isShowing()){
-//                    alertDialog.dismiss();
-//                }
-//            }
-//        }, 10000);
+        tutorialAlertDialog.getWindow().setBackgroundDrawable(colorDrawable);
+        tutorialAlertDialog.show();
 
+        dialogLayout.setOnTouchListener(new OnSwipeTouchListener(getApplication()) {
+            @Override
+            public void onSwipeRight() {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                final View dialogLayout = getLayoutInflater().inflate(R.layout.dialog_select_language, null);
+                final List<LanguageItem> languageItems = new LinkedList<>();
+                final TypedArray languages = getResources().obtainTypedArray(R.array.languages);
+                final TypedArray countryFlags = getResources().obtainTypedArray(R.array.country_flags);
+                for (int i = 0; i < languages.length() ; i++) {
+                    // get resource ID by index
+                    languageItems.add(new LanguageItem(languages.getString(i), countryFlags.getResourceId(i, -1)));
+                }
+                final RecyclerView recyclerLanguages = dialogLayout.findViewById(R.id.recycler_languages);
+                final LinearLayoutManager folderLayoutManager = new LinearLayoutManager(getApplication(), RecyclerView.VERTICAL, false);
+                recyclerLanguages.setLayoutManager(folderLayoutManager);
+                recyclerLanguages.setAdapter(new LanguageListAdapter(getApplication(), languageItems));
+                builder.setView(dialogLayout);
+                final AlertDialog alertDialog = builder.create();
+                languages.recycle();
+                countryFlags.recycle();
+                tutorialAlertDialog.dismiss();
+                alertDialog.show();
+            }
+
+            @Override
+            public void onSwipeLeft() {
+                // Do nothing!
+            }
+        });
     }
 
     @Nullable
@@ -137,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
         return new MainActivityInterface() {
             @Override
             public void restartGame() {
-                Fragment frg = getSupportFragmentManager().findFragmentByTag("Your_Fragment_TAG");
+                final Fragment frg = getSupportFragmentManager().findFragmentByTag("Your_Fragment_TAG");
                 final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 ft.detach(frg);
                 ft.attach(frg);
@@ -145,6 +174,4 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
-
-
 }

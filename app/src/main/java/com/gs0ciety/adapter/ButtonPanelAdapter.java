@@ -1,7 +1,6 @@
 package com.gs0ciety.adapter;
 
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.gs0ciety.activity.R;
+import com.gs0ciety.interfaces.ButtonPanelBehaviours;
 import com.gs0ciety.model.AnimalItem;
 
 import java.util.List;
@@ -22,10 +22,14 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
 
     private Context context;
     private List<AnimalItem> animalItemList;
+    private ButtonPanelBehaviours buttonPanelBehaviours;
 
-    public ButtonPanelAdapter(final Context context, final List<AnimalItem> animalItemLists) {
+    public ButtonPanelAdapter(final Context context,
+                              final List<AnimalItem> animalItemLists,
+                              final ButtonPanelBehaviours buttonPanelBehaviours) {
         this.context = context;
         this.animalItemList = animalItemLists;
+        this.buttonPanelBehaviours = buttonPanelBehaviours;
     }
 
     @NonNull
@@ -43,21 +47,9 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
         viewHolder.animalName.setText(animalItemList.get(i).getName());
         viewHolder.animalImage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(final View view) {
-                final MediaPlayer mediaPlayer = MediaPlayer.create(context, animalItemList.get(i).getAudioResId());
-                viewHolder.lottieAnimationView.setVisibility(View.VISIBLE);
-                viewHolder.lottieAnimationView.setMinAndMaxProgress(0.2f, 0.4f);
-                mediaPlayer.start();
-                viewHolder.lottieAnimationView.playAnimation();
-                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(final MediaPlayer mp) {
-                        viewHolder.lottieAnimationView.cancelAnimation();
-                        viewHolder.lottieAnimationView.setVisibility(View.INVISIBLE);
-                        mp.release();
-                    }
-                });
-            }
+            public void onClick(final View v) {
+                    buttonPanelBehaviours.playSound(animalItemList.get(i).getAudioResId(), viewHolder.lottieAnimationView);
+                }
         });
     }
 

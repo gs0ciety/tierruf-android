@@ -1,6 +1,5 @@
 package com.gs0ciety.listeners;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -10,7 +9,7 @@ public abstract class OnSwipeTouchListener implements View.OnTouchListener {
 
     private final GestureDetector gestureDetector;
 
-    public OnSwipeTouchListener(Context context) {
+    public OnSwipeTouchListener(final Context context) {
         gestureDetector = new GestureDetector(context, new GestureListener());
     }
 
