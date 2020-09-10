@@ -38,7 +38,6 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
                 .inflate(R.layout.item_animal, viewGroup, false));
     }
 
-
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 

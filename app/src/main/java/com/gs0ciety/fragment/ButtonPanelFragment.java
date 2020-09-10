@@ -77,6 +77,7 @@ public class ButtonPanelFragment extends Fragment {
                 builder.setView(dialogLayout);
                 final AlertDialog alertDialog = builder.create();
                 languages.recycle();
+                countryFlags.recycle();
                 alertDialog.show();
             }
 
