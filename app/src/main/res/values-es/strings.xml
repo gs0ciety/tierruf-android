@@ -35,5 +35,8 @@
     <string name="spanish_language">Español</string>
     <string name="english_language">Inglés</string>
     <string name="portuguese_language">Portugués</string>
+    <string name="german_language">Alemán</string>
+    <string name="french_language">Francés</string>
+    <string name="italian_language">Italiano</string>
 
 </resources>

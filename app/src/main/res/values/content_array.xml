@@ -154,10 +154,16 @@
         <item>@string/spanish_language</item>
         <item>@string/english_language</item>
         <item>@string/portuguese_language</item>
+        <item>@string/italian_language</item>
+        <item>@string/german_language</item>
+        <item>@string/french_language</item>
     </array>
     <array name="country_flags">
         <item>@drawable/flag_spain</item>
         <item>@drawable/flag_uk</item>
         <item>@drawable/flag_brazil</item>
+        <item>@drawable/flag_italy</item>
+        <item>@drawable/flag_germany</item>
+        <item>@drawable/flag_france</item>
     </array>
 </resources>
