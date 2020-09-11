@@ -26,6 +26,7 @@ import com.gs0ciety.interfaces.MainActivityInterface;
 import com.gs0ciety.listeners.OnSwipeTouchListener;
 import com.gs0ciety.model.LanguageItem;
 import com.gs0ciety.utils.GameFragmentLauncherUtils;
+import com.gs0ciety.utils.PreferenceUtils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -63,41 +64,45 @@ public class MainActivity extends AppCompatActivity {
                 // Do nothing!
             }
         });
-        final AlertDialog tutorialAlertDialog = builder.create();
-        final ColorDrawable colorDrawable = new ColorDrawable(Color.BLACK);
-        colorDrawable.setAlpha(170);
-        tutorialAlertDialog.getWindow().setBackgroundDrawable(colorDrawable);
-        tutorialAlertDialog.show();
 
-        dialogLayout.setOnTouchListener(new OnSwipeTouchListener(getApplication()) {
-            @Override
-            public void onSwipeRight() {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                final View dialogLayout = getLayoutInflater().inflate(R.layout.dialog_select_language, null);
-                final List<LanguageItem> languageItems = new LinkedList<>();
-                final TypedArray languages = getResources().obtainTypedArray(R.array.languages);
-                final TypedArray countryFlags = getResources().obtainTypedArray(R.array.country_flags);
-                for (int i = 0; i < languages.length() ; i++) {
-                    // get resource ID by index
-                    languageItems.add(new LanguageItem(languages.getString(i), countryFlags.getResourceId(i, -1)));
+        if (PreferenceUtils.shouldDisplayMainTutorial(getApplicationContext())) {
+            PreferenceUtils.showMainTutorial(false, getApplicationContext());
+            final AlertDialog tutorialAlertDialog = builder.create();
+            final ColorDrawable colorDrawable = new ColorDrawable(Color.BLACK);
+            colorDrawable.setAlpha(170);
+            tutorialAlertDialog.getWindow().setBackgroundDrawable(colorDrawable);
+            tutorialAlertDialog.show();
+
+            dialogLayout.setOnTouchListener(new OnSwipeTouchListener(getApplication()) {
+                @Override
+                public void onSwipeRight() {
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    final View dialogLayout = getLayoutInflater().inflate(R.layout.dialog_select_language, null);
+                    final List<LanguageItem> languageItems = new LinkedList<>();
+                    final TypedArray languages = getResources().obtainTypedArray(R.array.languages);
+                    final TypedArray countryFlags = getResources().obtainTypedArray(R.array.country_flags);
+                    for (int i = 0; i < languages.length() ; i++) {
+                        // get resource ID by index
+                        languageItems.add(new LanguageItem(languages.getString(i), countryFlags.getResourceId(i, -1)));
+                    }
+                    final RecyclerView recyclerLanguages = dialogLayout.findViewById(R.id.recycler_languages);
+                    final LinearLayoutManager folderLayoutManager = new LinearLayoutManager(getApplication(), RecyclerView.VERTICAL, false);
+                    recyclerLanguages.setLayoutManager(folderLayoutManager);
+                    recyclerLanguages.setAdapter(new LanguageListAdapter(getApplication(), languageItems));
+                    builder.setView(dialogLayout);
+                    final AlertDialog alertDialog = builder.create();
+                    languages.recycle();
+                    countryFlags.recycle();
+                    tutorialAlertDialog.dismiss();
+                    alertDialog.show();
                 }
-                final RecyclerView recyclerLanguages = dialogLayout.findViewById(R.id.recycler_languages);
-                final LinearLayoutManager folderLayoutManager = new LinearLayoutManager(getApplication(), RecyclerView.VERTICAL, false);
-                recyclerLanguages.setLayoutManager(folderLayoutManager);
-                recyclerLanguages.setAdapter(new LanguageListAdapter(getApplication(), languageItems));
-                builder.setView(dialogLayout);
-                final AlertDialog alertDialog = builder.create();
-                languages.recycle();
-                countryFlags.recycle();
-                tutorialAlertDialog.dismiss();
-                alertDialog.show();
-            }
 
-            @Override
-            public void onSwipeLeft() {
-                // Do nothing!
-            }
-        });
+                @Override
+                public void onSwipeLeft() {
+                    // Do nothing!
+                }
+            });
+        }
     }
 
     @Nullable
