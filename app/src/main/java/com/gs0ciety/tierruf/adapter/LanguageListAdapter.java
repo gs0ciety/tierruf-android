@@ -1,4 +1,4 @@
-package com.gs0ciety.adapter;
+package com.gs0ciety.tierruf.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.gs0ciety.activity.R;
-import com.gs0ciety.model.LanguageItem;
+import com.gs0ciety.tierruf.R;
+import com.gs0ciety.tierruf.model.LanguageItem;
 
 import java.util.List;
 

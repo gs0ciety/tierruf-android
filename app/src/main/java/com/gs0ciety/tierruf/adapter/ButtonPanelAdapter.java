@@ -1,4 +1,4 @@
-package com.gs0ciety.adapter;
+package com.gs0ciety.tierruf.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,9 +12,9 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.gs0ciety.activity.R;
-import com.gs0ciety.interfaces.ButtonPanelBehaviours;
-import com.gs0ciety.model.AnimalItem;
+import com.gs0ciety.tierruf.R;
+import com.gs0ciety.tierruf.interfaces.ButtonPanelBehaviors;
+import com.gs0ciety.tierruf.model.AnimalItem;
 
 import java.util.List;
 
@@ -22,14 +22,14 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
 
     private Context context;
     private List<AnimalItem> animalItemList;
-    private ButtonPanelBehaviours buttonPanelBehaviours;
+    private ButtonPanelBehaviors buttonPanelBehaviors;
 
     public ButtonPanelAdapter(final Context context,
                               final List<AnimalItem> animalItemLists,
-                              final ButtonPanelBehaviours buttonPanelBehaviours) {
+                              final ButtonPanelBehaviors buttonPanelBehaviors) {
         this.context = context;
         this.animalItemList = animalItemLists;
-        this.buttonPanelBehaviours = buttonPanelBehaviours;
+        this.buttonPanelBehaviors = buttonPanelBehaviors;
     }
 
     @NonNull
@@ -48,7 +48,7 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
         viewHolder.animalImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                    buttonPanelBehaviours.playSound(animalItemList.get(i).getAudioResId(), viewHolder.lottieAnimationView);
+                    buttonPanelBehaviors.playSound(animalItemList.get(i).getAudioResId(), viewHolder.lottieAnimationView);
                 }
         });
     }

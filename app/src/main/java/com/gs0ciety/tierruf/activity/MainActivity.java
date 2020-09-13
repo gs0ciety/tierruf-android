@@ -1,4 +1,4 @@
-package com.gs0ciety.activity;
+package com.gs0ciety.tierruf.activity;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -20,12 +20,16 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.gs0ciety.adapter.LanguageListAdapter;
-import com.gs0ciety.fragment.ButtonPanelFragment;
-import com.gs0ciety.interfaces.MainActivityInterface;
-import com.gs0ciety.listeners.OnSwipeTouchListener;
-import com.gs0ciety.model.LanguageItem;
-import com.gs0ciety.utils.GameFragmentLauncherUtils;
+import com.google.android.gms.common.util.CrashUtils;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
+import com.google.firebase.crashlytics.internal.common.CrashlyticsCore;
+import com.gs0ciety.tierruf.R;
+import com.gs0ciety.tierruf.adapter.LanguageListAdapter;
+import com.gs0ciety.tierruf.fragment.ButtonPanelFragment;
+import com.gs0ciety.tierruf.interfaces.MainActivityBehavior;
+import com.gs0ciety.tierruf.listeners.OnSwipeTouchListener;
+import com.gs0ciety.tierruf.model.LanguageItem;
+import com.gs0ciety.tierruf.utils.GameFragmentLauncherUtils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -162,8 +166,8 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit(); // save the changes
     }
 
-    private MainActivityInterface initMainActivityInterface() {
-        return new MainActivityInterface() {
+    private MainActivityBehavior initMainActivityInterface() {
+        return new MainActivityBehavior() {
             @Override
             public void restartGame() {
                 final Fragment frg = getSupportFragmentManager().findFragmentByTag("Your_Fragment_TAG");

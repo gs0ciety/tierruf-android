@@ -1,4 +1,4 @@
-package com.gs0ciety.fragment;
+package com.gs0ciety.tierruf.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -19,13 +19,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.gs0ciety.activity.R;
-import com.gs0ciety.adapter.ButtonPanelAdapter;
-import com.gs0ciety.adapter.LanguageListAdapter;
-import com.gs0ciety.interfaces.ButtonPanelBehaviours;
-import com.gs0ciety.listeners.OnSwipeTouchListener;
-import com.gs0ciety.model.AnimalItem;
-import com.gs0ciety.model.LanguageItem;
+import com.gs0ciety.tierruf.R;
+import com.gs0ciety.tierruf.adapter.ButtonPanelAdapter;
+import com.gs0ciety.tierruf.adapter.LanguageListAdapter;
+import com.gs0ciety.tierruf.interfaces.ButtonPanelBehaviors;
+import com.gs0ciety.tierruf.listeners.OnSwipeTouchListener;
+import com.gs0ciety.tierruf.model.AnimalItem;
+import com.gs0ciety.tierruf.model.LanguageItem;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -92,8 +92,8 @@ public class ButtonPanelFragment extends Fragment {
         return gridRecycler;
     }
 
-    private ButtonPanelBehaviours createButtonPanelBehaviours() {
-        return new ButtonPanelBehaviours() {
+    private ButtonPanelBehaviors createButtonPanelBehaviours() {
+        return new ButtonPanelBehaviors() {
             @Override
             public void playSound(final @IntegerRes int audioResId, final LottieAnimationView lottieAnimationView) {
                 stopActiveSound();

@@ -1,4 +1,4 @@
-package com.gs0ciety.activity;
+package com.gs0ciety.tierruf.activity;
 
 import org.junit.Test;
 

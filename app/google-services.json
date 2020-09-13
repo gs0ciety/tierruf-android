@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "824751858171",
+    "firebase_url": "https://tierruf.firebaseio.com",
+    "project_id": "tierruf",
+    "storage_bucket": "tierruf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824751858171:android:b7ad6c5e60555ea8a12b5e",
+        "android_client_info": {
+          "package_name": "com.gs0ciety.tierruf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824751858171-eob05v27n74ileq2rk0bnjvoukj2udfk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-X-tqKqchdz9RbnKFZGfujFQl8gdYNJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824751858171-eob05v27n74ileq2rk0bnjvoukj2udfk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
