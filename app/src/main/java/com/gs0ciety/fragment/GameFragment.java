@@ -45,6 +45,7 @@ public class GameFragment extends Fragment {
         fifthAnimalOption, sixthAnimalOption, mainAnimal;
 
     private TextView mainAnimalText;
+    private MediaPlayer mediaPlayer;
 
     @Override
     public View onCreateView(final LayoutInflater inflater,
@@ -239,13 +240,16 @@ public class GameFragment extends Fragment {
                 builder.setView(dialogLayout);
                 final AlertDialog alertDialog = builder.create();
                 alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                mediaPlayer = MediaPlayer.create(getContext(), R.raw.drums_success);
                 alertDialog.show();
+                mediaPlayer.start();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         if (alertDialog.isShowing()){
                             alertDialog.dismiss();
                         }
+                        mediaPlayer.release();
                     }
                 }, 3000);
                 mainActivityInterface.restartGame();
@@ -285,6 +289,19 @@ public class GameFragment extends Fragment {
         } else {
             //deprecated in API 26
             vibrator.vibrate(500);
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        stopActiveSound();
+        super.onDestroy();
+    }
+
+    private void stopActiveSound() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
         }
     }
 }
