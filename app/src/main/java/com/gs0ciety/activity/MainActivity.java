@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView panelIndicator, questionIndicator, soundIndicator, nameIndicator, panelButton,
             questionButton, soundButton ,nameButton;
+
+    private MediaPlayer mediaPlayer;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -116,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
         nameIndicator.setAlpha(0f);
         nameButton.setAlpha(0.7f);
         loadFragment(new ButtonPanelFragment());
+        setTransitionGameSound(view.getContext());
     }
 
     public void onClickSoundButton(final View view) {
@@ -128,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         nameIndicator.setAlpha(0f);
         nameButton.setAlpha(0.7f);
         loadFragment(GameFragmentLauncherUtils.soundGameLauncher(initMainActivityInterface()));
+        setTransitionGameSound(view.getContext());
     }
 
     public void onClickQuestionButton(final View view) {
@@ -140,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
         nameIndicator.setAlpha(0f);
         nameButton.setAlpha(0.7f);
         loadFragment(GameFragmentLauncherUtils.shapeGameLauncher(initMainActivityInterface()));
+        setTransitionGameSound(view.getContext());
     }
 
     public void onClickNameButton(final View view) {
@@ -152,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
         soundIndicator.setAlpha(0f);
         soundButton.setAlpha(0.7f);
         loadFragment(GameFragmentLauncherUtils.wordsGameLauncher(initMainActivityInterface()));
+        setTransitionGameSound(view.getContext());
     }
 
     private void loadFragment(final Fragment fragment) {
@@ -173,5 +180,24 @@ public class MainActivity extends AppCompatActivity {
                 ft.commit();
             }
         };
+    }
+
+    public void setTransitionGameSound(final Context context) {
+        stopActiveSound();
+        mediaPlayer = MediaPlayer.create(context, R.raw.transition_game_btn_sound);
+        mediaPlayer.start();
+    }
+
+    @Override
+    public void onDestroy() {
+        stopActiveSound();
+        super.onDestroy();
+    }
+
+    private void stopActiveSound() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }
