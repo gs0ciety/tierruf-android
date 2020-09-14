@@ -39,4 +39,10 @@
     <string name="french_language">Francés</string>
     <string name="italian_language">Italiano</string>
 
+    <string name="spanish_language_short">es</string>
+    <string name="english_language_short">en</string>
+    <string name="portuguese_language_short">pt</string>
+    <string name="german_language_short">de</string>
+    <string name="french_language_short">fr</string>
+    <string name="italian_language_short">it</string>
 </resources>
