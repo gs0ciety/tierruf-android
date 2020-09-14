@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Botonera Animal</string>
+    <string name="incorrect">¡RIPROVA!</string>
+
+    <string name="bear">ORSO</string>
+    <string name="bee">APE</string>
+    <string name="camel">CAMMELLO</string>
+    <string name="cat">GATTO</string>
+    <string name="cow">MUCCA</string>
+    <string name="dog">CANE</string>
+    <string name="dolphin">DELFINO</string>
+    <string name="duck">ANATRA</string>
+    <string name="eagle">AQUILA</string>
+    <string name="elephant">ELEFANTE</string>
+    <string name="frog">RANA</string>
+    <string name="goat">CAPRA</string>
+    <string name="horse">CAVALLO</string>
+    <string name="lion">LEONE</string>
+    <string name="monkey">SCIMMIA</string>
+    <string name="mouse">TOPO</string>
+    <string name="owl">GUFO</string>
+    <string name="penguin">PINGUINO</string>
+    <string name="pig">MAIALE</string>
+    <string name="pigeon">PICCIONE</string>
+    <string name="rooster">GALLO</string>
+    <string name="seal">FOCA</string>
+    <string name="sheep">PECORA</string>
+    <string name="snake">SERPENTE</string>
+    <string name="tiger">TIGRE</string>
+    <string name="toucan">TUCANO</string>
+    <string name="whale">BALENA</string>
+    <string name="wolf">LUPO</string>
+
+    <string name="title_language_dialog">Gioca in altre lingue!</string>
+    <string name="spanish_language">Spagnolo</string>
+    <string name="english_language">Inglese</string>
+    <string name="portuguese_language">Portoghese</string>
+    <string name="german_language">Tedesco</string>
+    <string name="french_language">Francese</string>
+    <string name="italian_language">Italiano</string>
+
+    <string name="spanish_language_short">es</string>
+    <string name="english_language_short">en</string>
+    <string name="portuguese_language_short">pt</string>
+    <string name="german_language_short">de</string>
+    <string name="french_language_short">fr</string>
+    <string name="italian_language_short">it</string>
+
+</resources>
