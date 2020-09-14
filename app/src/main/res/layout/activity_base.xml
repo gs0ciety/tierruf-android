@@ -22,13 +22,14 @@
                 android:id="@+id/btn_animal_panel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="onClickPanelButton"
                 android:scaleType="centerCrop"
+                android:onClick="onClickPanelButton"
+                android:soundEffectsEnabled="false"
+                app:srcCompat="@drawable/btn_animal_toolbar_panel"
                 app:layout_constraintBottom_toBottomOf="@id/toolbar_base_activity"
-                app:layout_constraintLeft_toLeftOf="@id/toolbar_base_activity"
-                app:layout_constraintRight_toLeftOf="@id/img_indicator_animal_question"
                 app:layout_constraintTop_toTopOf="@id/toolbar_base_activity"
-                app:srcCompat="@drawable/btn_animal_toolbar_panel" />
+                app:layout_constraintLeft_toLeftOf="@id/toolbar_base_activity"
+                app:layout_constraintRight_toLeftOf="@id/img_indicator_animal_question"/>
 
             <ImageView
                 android:id="@+id/img_indicator_animal_panel"
@@ -44,14 +45,16 @@
                 android:id="@+id/btn_animal_question"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.7"
-                android:onClick="onClickQuestionButton"
                 android:scaleType="centerCrop"
+                android:onClick="onClickQuestionButton"
+                android:alpha="0.7"
+                android:soundEffectsEnabled="false"
+                app:srcCompat="@drawable/btn_animal_toolbar_question"
                 app:layout_constraintBottom_toBottomOf="@id/toolbar_base_activity"
+                app:layout_constraintTop_toTopOf="@id/toolbar_base_activity"
                 app:layout_constraintLeft_toRightOf="@id/img_indicator_animal_panel"
                 app:layout_constraintRight_toLeftOf="@id/img_indicator_animal_sound"
-                app:layout_constraintTop_toTopOf="@id/toolbar_base_activity"
-                app:srcCompat="@drawable/btn_animal_toolbar_question" />
+                />
 
             <ImageView
                 android:id="@+id/img_indicator_animal_question"
@@ -68,14 +71,17 @@
                 android:id="@+id/btn_animal_sound"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.7"
-                android:onClick="onClickSoundButton"
                 android:scaleType="centerCrop"
+                android:onClick="onClickSoundButton"
+                android:alpha="0.7"
+                android:soundEffectsEnabled="false"
+                app:srcCompat="@drawable/btn_animal_toolbar_sound"
                 app:layout_constraintBottom_toBottomOf="@id/toolbar_base_activity"
+                app:layout_constraintTop_toTopOf="@id/toolbar_base_activity"
                 app:layout_constraintLeft_toRightOf="@id/btn_animal_question"
                 app:layout_constraintRight_toLeftOf="@id/btn_animal_name"
-                app:layout_constraintTop_toTopOf="@id/toolbar_base_activity"
-                app:srcCompat="@drawable/btn_animal_toolbar_sound" />
+                />
+
 
             <ImageView
                 android:id="@+id/img_indicator_animal_sound"
@@ -92,14 +98,16 @@
                 android:id="@+id/btn_animal_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.7"
-                android:onClick="onClickNameButton"
                 android:scaleType="centerCrop"
+                android:onClick="onClickNameButton"
+                android:alpha="0.7"
+                android:soundEffectsEnabled="false"
+                app:srcCompat="@drawable/btn_animal_name"
                 app:layout_constraintBottom_toBottomOf="@id/toolbar_base_activity"
+                app:layout_constraintTop_toTopOf="@id/toolbar_base_activity"
                 app:layout_constraintLeft_toRightOf="@id/img_indicator_animal_sound"
                 app:layout_constraintRight_toRightOf="@id/toolbar_base_activity"
-                app:layout_constraintTop_toTopOf="@id/toolbar_base_activity"
-                app:srcCompat="@drawable/btn_animal_name" />
+                />
 
             <ImageView
                 android:id="@+id/img_indicator_animal_name"
@@ -117,7 +125,7 @@
         <FrameLayout
             android:id="@+id/frame_base_activity_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></FrameLayout>
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

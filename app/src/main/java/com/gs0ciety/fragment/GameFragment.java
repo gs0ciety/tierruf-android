@@ -249,13 +249,16 @@ public class GameFragment extends Fragment {
                 builder.setView(dialogLayout);
                 final AlertDialog alertDialog = builder.create();
                 alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                mediaPlayer = MediaPlayer.create(getContext(), R.raw.drums_success);
                 alertDialog.show();
+                mediaPlayer.start();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         if (alertDialog.isShowing()){
                             alertDialog.dismiss();
                         }
+                        mediaPlayer.release();
                     }
                 }, 3000);
                 mainActivityInterface.restartGame();
