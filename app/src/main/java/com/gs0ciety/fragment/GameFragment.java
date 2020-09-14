@@ -23,6 +23,7 @@ import android.widget.TextView;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.gs0ciety.Types.BuildParamTypes;
 import com.gs0ciety.Types.GameModeTypes;
@@ -36,6 +37,7 @@ import java.util.Set;
 public class GameFragment extends Fragment {
 
     private MainActivityInterface mainActivityInterface;
+    private MediaPlayer mediaPlayer;
 
     public GameFragment (final MainActivityInterface mainActivityInterface) {
         this.mainActivityInterface = mainActivityInterface;
@@ -79,13 +81,21 @@ public class GameFragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         final TypedArray mainSoundAnimalArray = getResources().obtainTypedArray(R.array.animal_sounds);
-                        final MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), mainSoundAnimalArray.getResourceId(correctAnimalResourcePosition, -1));
-                        mediaPlayer.start();
+                        stopActiveSound();
+                        final LottieAnimationView lottieAnimationView = view.getRootView().findViewById(R.id.animation_game_animal_sound);
+                        lottieAnimationView.setVisibility(View.VISIBLE);
+                        lottieAnimationView.setMinAndMaxProgress(0.2f, 0.4f);
+                        mediaPlayer = MediaPlayer.create(getContext(), mainSoundAnimalArray.getResourceId(correctAnimalResourcePosition, -1));
                         mainSoundAnimalArray.recycle();
+                        lottieAnimationView.setVisibility(View.VISIBLE);
+                        lottieAnimationView.playAnimation();
+                        mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                             @Override
                             public void onCompletion(final MediaPlayer mp) {
                                 mp.release();
+                                lottieAnimationView.cancelAnimation();
+                                lottieAnimationView.setVisibility(View.INVISIBLE);
                             }
                         });
                     }
@@ -285,6 +295,19 @@ public class GameFragment extends Fragment {
         } else {
             //deprecated in API 26
             vibrator.vibrate(500);
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        stopActiveSound();
+        super.onDestroy();
+    }
+
+    private void stopActiveSound() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
         }
     }
 }
