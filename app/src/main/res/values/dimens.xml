@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="height_toolbar_96dp">96dp</dimen>
+    <dimen name="font_size_animal_name">14sp</dimen>
+    <dimen name="font_size_animal_name_game">48sp</dimen>
 </resources>

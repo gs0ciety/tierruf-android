@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_locale" translatable="false">uri_extsdcard</string>
+    <string name="key_show_language_tutorial" translatable="false">show_language_tutorial</string>
+</resources>

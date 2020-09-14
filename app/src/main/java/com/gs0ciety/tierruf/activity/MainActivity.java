@@ -1,14 +1,8 @@
 package com.gs0ciety.tierruf.activity;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.res.TypedArray;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -17,22 +11,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.common.util.CrashUtils;
-import com.google.firebase.crashlytics.FirebaseCrashlytics;
-import com.google.firebase.crashlytics.internal.common.CrashlyticsCore;
 import com.gs0ciety.tierruf.R;
-import com.gs0ciety.tierruf.adapter.LanguageListAdapter;
 import com.gs0ciety.tierruf.fragment.ButtonPanelFragment;
 import com.gs0ciety.tierruf.interfaces.MainActivityBehavior;
-import com.gs0ciety.tierruf.listeners.OnSwipeTouchListener;
-import com.gs0ciety.tierruf.model.LanguageItem;
 import com.gs0ciety.tierruf.utils.GameFragmentLauncherUtils;
-
-import java.util.LinkedList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,54 +37,7 @@ public class MainActivity extends AppCompatActivity {
         soundButton = findViewById(R.id.btn_animal_sound);
         nameButton = findViewById(R.id.btn_animal_name);
 
-        loadFragment(new ButtonPanelFragment());
-
-        final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog_Theme);
-        final LayoutInflater inflater = getLayoutInflater();
-        final View dialogLayout = inflater.inflate(R.layout.dialog_tutorial, null);
-        builder.setCancelable(false).setCancelable(false);
-        builder.setView(dialogLayout);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(final DialogInterface dialog, int which) {
-                // Do nothing!
-            }
-        });
-        final AlertDialog tutorialAlertDialog = builder.create();
-        final ColorDrawable colorDrawable = new ColorDrawable(Color.BLACK);
-        colorDrawable.setAlpha(170);
-        tutorialAlertDialog.getWindow().setBackgroundDrawable(colorDrawable);
-        tutorialAlertDialog.show();
-
-        dialogLayout.setOnTouchListener(new OnSwipeTouchListener(getApplication()) {
-            @Override
-            public void onSwipeRight() {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                final View dialogLayout = getLayoutInflater().inflate(R.layout.dialog_select_language, null);
-                final List<LanguageItem> languageItems = new LinkedList<>();
-                final TypedArray languages = getResources().obtainTypedArray(R.array.languages);
-                final TypedArray countryFlags = getResources().obtainTypedArray(R.array.country_flags);
-                for (int i = 0; i < languages.length() ; i++) {
-                    // get resource ID by index
-                    languageItems.add(new LanguageItem(languages.getString(i), countryFlags.getResourceId(i, -1)));
-                }
-                final RecyclerView recyclerLanguages = dialogLayout.findViewById(R.id.recycler_languages);
-                final LinearLayoutManager folderLayoutManager = new LinearLayoutManager(getApplication(), RecyclerView.VERTICAL, false);
-                recyclerLanguages.setLayoutManager(folderLayoutManager);
-                recyclerLanguages.setAdapter(new LanguageListAdapter(getApplication(), languageItems));
-                builder.setView(dialogLayout);
-                final AlertDialog alertDialog = builder.create();
-                languages.recycle();
-                countryFlags.recycle();
-                tutorialAlertDialog.dismiss();
-                alertDialog.show();
-            }
-
-            @Override
-            public void onSwipeLeft() {
-                // Do nothing!
-            }
-        });
+        loadFragment(new ButtonPanelFragment(initMainActivityInterface()));
     }
 
     @Nullable
@@ -119,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
         soundButton.setAlpha(0.7f);
         nameIndicator.setAlpha(0f);
         nameButton.setAlpha(0.7f);
-        loadFragment(new ButtonPanelFragment());
+
+        loadFragment(new ButtonPanelFragment(initMainActivityInterface()));
     }
 
     public void onClickSoundButton(final View view) {

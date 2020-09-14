@@ -6,4 +6,5 @@ import com.airbnb.lottie.LottieAnimationView;
 
 public interface ButtonPanelBehaviors {
     void playSound(@IntegerRes int audioResId, LottieAnimationView lottieAnimationView);
+    void changeLanguage(final String language);
 }

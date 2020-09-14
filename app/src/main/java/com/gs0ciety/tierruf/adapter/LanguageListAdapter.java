@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,7 +13,9 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gs0ciety.tierruf.R;
+import com.gs0ciety.tierruf.interfaces.ButtonPanelBehaviors;
 import com.gs0ciety.tierruf.model.LanguageItem;
+
 
 import java.util.List;
 
@@ -20,10 +23,14 @@ public class LanguageListAdapter extends RecyclerView.Adapter<LanguageListAdapte
 
     private Context context;
     private List<LanguageItem> languageItemList;
+    private ButtonPanelBehaviors buttonPanelBehaviors;
 
-    public LanguageListAdapter(final Context context, final List<LanguageItem> languageItemList) {
+    public LanguageListAdapter(final Context context,
+                               final List<LanguageItem> languageItemList,
+                               final ButtonPanelBehaviors buttonPanelBehaviors) {
         this.context = context;
         this.languageItemList = languageItemList;
+        this.buttonPanelBehaviors = buttonPanelBehaviors;
     }
 
     @NonNull
@@ -41,10 +48,10 @@ public class LanguageListAdapter extends RecyclerView.Adapter<LanguageListAdapte
         viewHolder.countryFlag.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(),
                 languageItemList.get(i).getCountryFlagResId(), null));
         viewHolder.countryName.setText(languageItemList.get(i).getCountryName());
-        viewHolder.countryFlag.setOnClickListener(new View.OnClickListener() {
+        viewHolder.linearLayoutItemLanguage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(final View v) {
-                // Change language
+            public void onClick(View view) {
+                buttonPanelBehaviors.changeLanguage(languageItemList.get(i).getCountryNameShort());
             }
         });
     }
@@ -63,11 +70,13 @@ public class LanguageListAdapter extends RecyclerView.Adapter<LanguageListAdapte
 
         final ImageView countryFlag;
         final TextView countryName;
+        final LinearLayout linearLayoutItemLanguage;
 
         ViewHolder(@NonNull final View itemView) {
             super(itemView);
             countryFlag = itemView.findViewById(R.id.grid_item_animal_picture);
             countryName = itemView.findViewById(R.id.grid_item_animal_name);
+            linearLayoutItemLanguage = itemView.findViewById(R.id.linear_layout_item_language);
         }
     }
 }
