@@ -32,6 +32,7 @@ import com.gs0ciety.interfaces.MainActivityInterface;
 import com.gs0ciety.listeners.OnSwipeTouchListener;
 import com.gs0ciety.model.AnimalItem;
 import com.gs0ciety.model.LanguageItem;
+import com.gs0ciety.utils.PreferenceUtils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -73,7 +74,10 @@ public class ButtonPanelFragment extends Fragment {
         gridRecycler.setLayoutManager(folderLayoutManager);
         gridRecycler.setAdapter(new ButtonPanelAdapter(getContext(), animalItemList, createButtonPanelBehaviours()));
 
-        showTutorial();
+        if (PreferenceUtils.shouldDisplayMainTutorial(getContext())) {
+            PreferenceUtils.showMainTutorial(false, getContext());
+            showTutorial();
+        }
 
         gridRecycler.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
             @Override

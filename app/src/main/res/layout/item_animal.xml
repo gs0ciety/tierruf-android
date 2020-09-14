@@ -37,12 +37,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:textSize="16sp"
-        android:textColor="#000000"
         android:gravity="center"
-        tools:text="Bear"
-        app:layout_constraintTop_toBottomOf="@id/grid_item_animal_picture"
+        android:textColor="@color/colorTextDark"
+        android:textSize="@dimen/font_size_animal_name"
         app:layout_constraintLeft_toLeftOf="@id/constraint_item_animal"
-        />
+        app:layout_constraintTop_toBottomOf="@id/grid_item_animal_picture"
+        tools:text="Bear" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

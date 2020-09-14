@@ -102,12 +102,12 @@
             android:id="@+id/textViewMainAnimal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="80dp"
             android:textColor="@color/colorTextDark"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="@dimen/font_size_animal_name_game"
+            app:layout_constraintTop_toTopOf="@id/constraint_activity_main_game"
+            app:layout_constraintLeft_toLeftOf="@id/constraint_activity_main_game"
+            app:layout_constraintRight_toRightOf="@id/constraint_activity_main_game"
             tools:text="ANIMAL" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
