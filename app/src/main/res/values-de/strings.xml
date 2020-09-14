@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Tier botonera</string>
+    <string name="incorrect">¡VERSUCH ES NOCH EINMAL!</string>
+
+    <string name="bear">BÄR</string>
+    <string name="bee">BIENE</string>
+    <string name="camel">KAMEL</string>
+    <string name="cat">KATZE</string>
+    <string name="cow">KUH</string>
+    <string name="dog">HUND</string>
+    <string name="dolphin">DELFIN</string>
+    <string name="duck">ENTE</string>
+    <string name="eagle">ADLER</string>
+    <string name="elephant">ELEFANT</string>
+    <string name="frog">FROSCH</string>
+    <string name="goat">ZIEGE</string>
+    <string name="horse">PFERD</string>
+    <string name="lion">LÖWE</string>
+    <string name="monkey">AFFE</string>
+    <string name="mouse">MAUS</string>
+    <string name="owl">EULE</string>
+    <string name="penguin">PINGUIN</string>
+    <string name="pig">SCHWEIN</string>
+    <string name="pigeon">TAUBE</string>
+    <string name="rooster">HAHN</string>
+    <string name="seal">DICHTUNG</string>
+    <string name="sheep">SCHAF</string>
+    <string name="snake">SCHLANGE</string>
+    <string name="tiger">TIGER</string>
+    <string name="toucan">TUKAN</string>
+    <string name="whale">WAL</string>
+    <string name="wolf">WOLF</string>
+
+    <string name="title_language_dialog">Spielen Sie in anderen Sprachen!</string>
+    <string name="spanish_language">Spanisch</string>
+    <string name="english_language">Englisch</string>
+    <string name="portuguese_language">Portugiesisch</string>
+    <string name="german_language">Deutsche</string>
+    <string name="french_language">Französisch</string>
+    <string name="italian_language">Italienisch</string>
+
+    <string name="spanish_language_short">es</string>
+    <string name="english_language_short">en</string>
+    <string name="portuguese_language_short">pt</string>
+    <string name="german_language_short">de</string>
+    <string name="french_language_short">fr</string>
+    <string name="italian_language_short">it</string>
+
+</resources>

@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">botonera de animales</string>
+    <string name="incorrect">¡TENTE NOVAMENTE!</string>
+
+    <string name="bear">URSO</string>
+    <string name="bee">ABELHA</string>
+    <string name="camel">CAMELO</string>
+    <string name="cat">GATO</string>
+    <string name="cow">VACA</string>
+    <string name="dog">CÃO</string>
+    <string name="dolphin">GOLFINHO</string>
+    <string name="duck">PATO</string>
+    <string name="eagle">ÁGUIA</string>
+    <string name="elephant">ELEFANTE</string>
+    <string name="frog">RÃ</string>
+    <string name="goat">BODE</string>
+    <string name="horse">CAVALO</string>
+    <string name="lion">LEÃO</string>
+    <string name="monkey">MACACO</string>
+    <string name="mouse">RATO</string>
+    <string name="owl">CORUJA</string>
+    <string name="penguin">PINGUIM</string>
+    <string name="pig">PORCO</string>
+    <string name="pigeon">POMBO</string>
+    <string name="rooster">GALO</string>
+    <string name="seal">FOCA</string>
+    <string name="sheep">OVELHA</string>
+    <string name="snake">SERPENTE</string>
+    <string name="tiger">TIGRE</string>
+    <string name="toucan">TUCANO</string>
+    <string name="whale">BALEIA</string>
+    <string name="wolf">LOBO</string>
+
+    <string name="title_language_dialog">Jogar em outros idiomas!</string>
+    <string name="spanish_language">Espanhol</string>
+    <string name="english_language">Inglês</string>
+    <string name="portuguese_language">Português</string>
+    <string name="german_language">alemão</string>
+    <string name="french_language">francês</string>
+    <string name="italian_language">Italiano</string>
+
+    <string name="spanish_language_short">es</string>
+    <string name="english_language_short">en</string>
+    <string name="portuguese_language_short">pt</string>
+    <string name="german_language_short">de</string>
+    <string name="french_language_short">fr</string>
+    <string name="italian_language_short">it</string>
+
+</resources>
