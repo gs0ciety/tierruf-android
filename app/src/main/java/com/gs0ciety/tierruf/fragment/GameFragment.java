@@ -1,4 +1,4 @@
-package com.gs0ciety.fragment;
+package com.gs0ciety.tierruf.fragment;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -25,10 +25,10 @@ import androidx.fragment.app.Fragment;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.snackbar.Snackbar;
-import com.gs0ciety.Types.BuildParamTypes;
-import com.gs0ciety.Types.GameModeTypes;
-import com.gs0ciety.activity.R;
-import com.gs0ciety.interfaces.MainActivityInterface;
+import com.gs0ciety.tierruf.Types.BuildParamTypes;
+import com.gs0ciety.tierruf.Types.GameModeTypes;
+import com.gs0ciety.tierruf.R;
+import com.gs0ciety.tierruf.interfaces.MainActivityBehavior;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -36,11 +36,11 @@ import java.util.Set;
 
 public class GameFragment extends Fragment {
 
-    private MainActivityInterface mainActivityInterface;
+    private MainActivityBehavior mainActivityBehavior;
     private MediaPlayer mediaPlayer;
 
-    public GameFragment (final MainActivityInterface mainActivityInterface) {
-        this.mainActivityInterface = mainActivityInterface;
+    public GameFragment (final MainActivityBehavior mainActivityBehavior) {
+        this.mainActivityBehavior = mainActivityBehavior;
     }
 
     private ImageView firstAnimalOption, secondAnimalOption, thirdAnimalOption, fourthAnimalOption,
@@ -259,9 +259,9 @@ public class GameFragment extends Fragment {
                             alertDialog.dismiss();
                         }
                         mediaPlayer.release();
+                        mainActivityBehavior.restartGame();
                     }
                 }, 3000);
-                mainActivityInterface.restartGame();
             }
         });
     }

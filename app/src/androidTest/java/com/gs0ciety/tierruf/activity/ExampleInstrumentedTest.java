@@ -1,4 +1,4 @@
-package com.gs0ciety.activity;
+package com.gs0ciety.tierruf.activity;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.gs0ciety.animalbuttonspanel", appContext.getPackageName());
+        assertEquals("com.gs0ciety.tierruf", appContext.getPackageName());
     }
 }

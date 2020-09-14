@@ -1,4 +1,4 @@
-package com.gs0ciety.fragment;
+package com.gs0ciety.tierruf.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -23,15 +23,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.gs0ciety.activity.R;
-import com.gs0ciety.adapter.ButtonPanelAdapter;
-import com.gs0ciety.adapter.LanguageListAdapter;
-import com.gs0ciety.interfaces.ButtonPanelBehaviours;
-import com.gs0ciety.interfaces.ButtonPanelFragmentInterface;
-import com.gs0ciety.interfaces.MainActivityInterface;
-import com.gs0ciety.listeners.OnSwipeTouchListener;
-import com.gs0ciety.model.AnimalItem;
-import com.gs0ciety.model.LanguageItem;
+import com.gs0ciety.tierruf.R;
+import com.gs0ciety.tierruf.adapter.ButtonPanelAdapter;
+import com.gs0ciety.tierruf.adapter.LanguageListAdapter;
+import com.gs0ciety.tierruf.interfaces.ButtonPanelBehaviors;
+import com.gs0ciety.tierruf.interfaces.MainActivityBehavior;
+import com.gs0ciety.tierruf.listeners.OnSwipeTouchListener;
+import com.gs0ciety.tierruf.model.AnimalItem;
+import com.gs0ciety.tierruf.model.LanguageItem;
 import com.gs0ciety.utils.PreferenceUtils;
 
 import java.util.LinkedList;
@@ -41,12 +40,12 @@ import java.util.Locale;
 public class ButtonPanelFragment extends Fragment {
 
     private MediaPlayer mediaPlayer;
-    private MainActivityInterface mainActivityInterface;
+    private MainActivityBehavior mainActivityBehavior;
 
     private AlertDialog languageSelectionDialog;
 
-    public ButtonPanelFragment (final MainActivityInterface mainActivityInterface) {
-        this.mainActivityInterface = mainActivityInterface;
+    public ButtonPanelFragment (final MainActivityBehavior mainActivityBehavior) {
+        this.mainActivityBehavior = mainActivityBehavior;
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -72,7 +71,7 @@ public class ButtonPanelFragment extends Fragment {
 
         final GridLayoutManager folderLayoutManager = new GridLayoutManager(getContext(), 3, RecyclerView.VERTICAL, false);
         gridRecycler.setLayoutManager(folderLayoutManager);
-        gridRecycler.setAdapter(new ButtonPanelAdapter(getContext(), animalItemList, createButtonPanelBehaviours()));
+        gridRecycler.setAdapter(new ButtonPanelAdapter(getContext(), animalItemList, initButtonPanelFragmentBehavior()));
 
         if (PreferenceUtils.shouldDisplayMainTutorial(getContext())) {
             PreferenceUtils.showMainTutorial(false, getContext());
@@ -91,28 +90,6 @@ public class ButtonPanelFragment extends Fragment {
             }
         });
         return gridRecycler;
-    }
-
-    private ButtonPanelBehaviours createButtonPanelBehaviours() {
-        return new ButtonPanelBehaviours() {
-            @Override
-            public void playSound(final @IntegerRes int audioResId, final LottieAnimationView lottieAnimationView) {
-                stopActiveSound();
-                mediaPlayer = MediaPlayer.create(getContext(), audioResId);
-                lottieAnimationView.setVisibility(View.VISIBLE);
-                lottieAnimationView.setMinAndMaxProgress(0.2f, 0.4f);
-                lottieAnimationView.playAnimation();
-                mediaPlayer.start();
-                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(final MediaPlayer mp) {
-                        mp.release();
-                        lottieAnimationView.cancelAnimation();
-                        lottieAnimationView.setVisibility(View.INVISIBLE);
-                    }
-                });
-            }
-        };
     }
 
     @Override
@@ -174,7 +151,7 @@ public class ButtonPanelFragment extends Fragment {
         final RecyclerView recyclerLanguages = dialogLayout.findViewById(R.id.recycler_languages);
         final LinearLayoutManager folderLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         recyclerLanguages.setLayoutManager(folderLayoutManager);
-        recyclerLanguages.setAdapter(new LanguageListAdapter(getContext(), languageItems, initButtonPanelFragmentInterface()));
+        recyclerLanguages.setAdapter(new LanguageListAdapter(getContext(), languageItems, initButtonPanelFragmentBehavior()));
         builder.setView(dialogLayout);
         languages.recycle();
         countryFlags.recycle();
@@ -183,8 +160,26 @@ public class ButtonPanelFragment extends Fragment {
         languageSelectionDialog.show();
     }
 
-    private ButtonPanelFragmentInterface initButtonPanelFragmentInterface() {
-        return new ButtonPanelFragmentInterface() {
+    private ButtonPanelBehaviors initButtonPanelFragmentBehavior() {
+        return new ButtonPanelBehaviors() {
+            @Override
+            public void playSound(final @IntegerRes int audioResId, final LottieAnimationView lottieAnimationView) {
+                stopActiveSound();
+                mediaPlayer = MediaPlayer.create(getContext(), audioResId);
+                lottieAnimationView.setVisibility(View.VISIBLE);
+                lottieAnimationView.setMinAndMaxProgress(0.2f, 0.4f);
+                lottieAnimationView.playAnimation();
+                mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(final MediaPlayer mp) {
+                        mp.release();
+                        lottieAnimationView.cancelAnimation();
+                        lottieAnimationView.setVisibility(View.INVISIBLE);
+                    }
+                });
+            }
+
             @Override
             public void changeLanguage(final String language) {
                 Locale locale = new Locale(language);
@@ -193,7 +188,7 @@ public class ButtonPanelFragment extends Fragment {
                 configuration.locale = locale;
                 getResources().updateConfiguration(configuration, displayMetrics);
                 languageSelectionDialog.dismiss();
-                mainActivityInterface.restartGame();
+                mainActivityBehavior.restartGame();
             }
         };
     }

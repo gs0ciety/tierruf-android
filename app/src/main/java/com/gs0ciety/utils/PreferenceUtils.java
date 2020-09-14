@@ -6,7 +6,8 @@ import android.preference.PreferenceManager;
 
 import androidx.annotation.Nullable;
 
-import com.gs0ciety.activity.R;
+import com.gs0ciety.tierruf.R;
+
 
 public class PreferenceUtils {
 

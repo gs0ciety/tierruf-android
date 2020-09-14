@@ -1,4 +1,4 @@
-package com.gs0ciety.listeners;
+package com.gs0ciety.tierruf.listeners;
 
 import android.content.Context;
 import android.view.GestureDetector;

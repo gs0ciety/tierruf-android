@@ -1,7 +1,6 @@
-package com.gs0ciety.activity;
+package com.gs0ciety.tierruf.activity;
 
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
@@ -13,9 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.gs0ciety.fragment.ButtonPanelFragment;
-import com.gs0ciety.interfaces.MainActivityInterface;
-import com.gs0ciety.utils.GameFragmentLauncherUtils;
+import com.gs0ciety.tierruf.R;
+import com.gs0ciety.tierruf.fragment.ButtonPanelFragment;
+import com.gs0ciety.tierruf.interfaces.MainActivityBehavior;
+import com.gs0ciety.tierruf.utils.GameFragmentLauncherUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -103,8 +103,8 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit(); // save the changes
     }
 
-    private MainActivityInterface initMainActivityInterface() {
-        return new MainActivityInterface() {
+    private MainActivityBehavior initMainActivityInterface() {
+        return new MainActivityBehavior() {
             @Override
             public void restartGame() {
                 final Fragment frg = getSupportFragmentManager().findFragmentByTag("Your_Fragment_TAG");

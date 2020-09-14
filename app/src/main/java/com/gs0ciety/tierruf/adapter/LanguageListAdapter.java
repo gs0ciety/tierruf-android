@@ -1,6 +1,5 @@
-package com.gs0ciety.adapter;
+package com.gs0ciety.tierruf.adapter;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.gs0ciety.activity.R;
-import com.gs0ciety.interfaces.ButtonPanelFragmentInterface;
-import com.gs0ciety.interfaces.MainActivityInterface;
-import com.gs0ciety.model.LanguageItem;
+import com.gs0ciety.tierruf.R;
+import com.gs0ciety.tierruf.interfaces.ButtonPanelBehaviors;
+import com.gs0ciety.tierruf.model.LanguageItem;
+
 
 import java.util.List;
 
@@ -24,14 +23,14 @@ public class LanguageListAdapter extends RecyclerView.Adapter<LanguageListAdapte
 
     private Context context;
     private List<LanguageItem> languageItemList;
-    private ButtonPanelFragmentInterface buttonPanelFragmentInterface;
+    private ButtonPanelBehaviors buttonPanelBehaviors;
 
     public LanguageListAdapter(final Context context,
                                final List<LanguageItem> languageItemList,
-                               final ButtonPanelFragmentInterface buttonPanelFragmentInterface) {
+                               final ButtonPanelBehaviors buttonPanelBehaviors) {
         this.context = context;
         this.languageItemList = languageItemList;
-        this.buttonPanelFragmentInterface = buttonPanelFragmentInterface;
+        this.buttonPanelBehaviors = buttonPanelBehaviors;
     }
 
     @NonNull
@@ -52,7 +51,7 @@ public class LanguageListAdapter extends RecyclerView.Adapter<LanguageListAdapte
         viewHolder.linearLayoutItemLanguage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonPanelFragmentInterface.changeLanguage(languageItemList.get(i).getCountryNameShort());
+                buttonPanelBehaviors.changeLanguage(languageItemList.get(i).getCountryNameShort());
             }
         });
     }

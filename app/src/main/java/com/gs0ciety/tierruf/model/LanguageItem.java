@@ -1,4 +1,4 @@
-package com.gs0ciety.model;
+package com.gs0ciety.tierruf.model;
 
 public class LanguageItem {
 
