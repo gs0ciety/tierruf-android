@@ -40,6 +40,7 @@ import java.util.Locale;
 public class ButtonPanelFragment extends Fragment {
 
     private MediaPlayer mediaPlayer;
+    private LottieAnimationView currentAnimation;
     private MainActivityBehavior mainActivityBehavior;
 
     private AlertDialog languageSelectionDialog;
@@ -94,11 +95,15 @@ public class ButtonPanelFragment extends Fragment {
 
     @Override
     public void onDestroy() {
-        stopActiveSound();
+        stopActiveSoundAndAnimation();
         super.onDestroy();
     }
 
-    private void stopActiveSound() {
+    private void stopActiveSoundAndAnimation() {
+        if (currentAnimation != null) {
+            currentAnimation.cancelAnimation();
+            currentAnimation.setVisibility(View.INVISIBLE);
+        }
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
@@ -164,18 +169,19 @@ public class ButtonPanelFragment extends Fragment {
         return new ButtonPanelBehaviors() {
             @Override
             public void playSound(final @IntegerRes int audioResId, final LottieAnimationView lottieAnimationView) {
-                stopActiveSound();
+                stopActiveSoundAndAnimation();
                 mediaPlayer = MediaPlayer.create(getContext(), audioResId);
-                lottieAnimationView.setVisibility(View.VISIBLE);
-                lottieAnimationView.setMinAndMaxProgress(0.2f, 0.4f);
-                lottieAnimationView.playAnimation();
+                currentAnimation = lottieAnimationView;
+                currentAnimation.setVisibility(View.VISIBLE);
+                currentAnimation.setMinAndMaxProgress(0.2f, 0.4f);
+                currentAnimation.playAnimation();
                 mediaPlayer.start();
                 mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(final MediaPlayer mp) {
                         mp.release();
-                        lottieAnimationView.cancelAnimation();
-                        lottieAnimationView.setVisibility(View.INVISIBLE);
+                        currentAnimation.cancelAnimation();
+                        currentAnimation.setVisibility(View.INVISIBLE);
                     }
                 });
             }
