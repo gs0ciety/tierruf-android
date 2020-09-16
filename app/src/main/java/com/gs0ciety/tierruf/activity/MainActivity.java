@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         soundButton.setAlpha(0.7f);
         nameIndicator.setAlpha(0f);
         nameButton.setAlpha(0.7f);
-
         loadFragment(new ButtonPanelFragment(initMainActivityInterface()));
     }
 
