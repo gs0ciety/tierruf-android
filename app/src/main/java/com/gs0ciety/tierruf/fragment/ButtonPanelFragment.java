@@ -13,6 +13,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.IntegerRes;
 import androidx.annotation.NonNull;
@@ -154,6 +155,15 @@ public class ButtonPanelFragment extends Fragment {
             languageItems.add(new LanguageItem(languages.getString(i), countryFlags.getResourceId(i, -1), languagesShort.getString(i)));
         }
         final RecyclerView recyclerLanguages = dialogLayout.findViewById(R.id.recycler_languages);
+        final ImageView closeButton = dialogLayout.findViewById(R.id.btn_closed_language_list);
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                if (languageSelectionDialog.isShowing()) {
+                    languageSelectionDialog.dismiss();
+                }
+            }
+        });
         final LinearLayoutManager folderLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         recyclerLanguages.setLayoutManager(folderLayoutManager);
         recyclerLanguages.setAdapter(new LanguageListAdapter(getContext(), languageItems, initButtonPanelFragmentBehavior()));
@@ -188,9 +198,9 @@ public class ButtonPanelFragment extends Fragment {
 
             @Override
             public void changeLanguage(final String language) {
-                Locale locale = new Locale(language);
-                DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-                Configuration configuration = getResources().getConfiguration();
+                final Locale locale = new Locale(language);
+                final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+                final Configuration configuration = getResources().getConfiguration();
                 configuration.locale = locale;
                 getResources().updateConfiguration(configuration, displayMetrics);
                 languageSelectionDialog.dismiss();
