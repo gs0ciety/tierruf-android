@@ -154,25 +154,151 @@
         <item>@string/spanish_language</item>
         <item>@string/english_language</item>
         <item>@string/portuguese_language</item>
-        <item>@string/italian_language</item>
         <item>@string/german_language</item>
         <item>@string/french_language</item>
+        <item>@string/italian_language</item>
+        <item>@string/armenian_language</item>
+        <item>@string/bengali_language</item>
+        <item>@string/bulgarian_language</item>
+        <item>@string/khmer_language</item>
+        <item>@string/chinese_language</item>
+        <item>@string/croatian_language</item>
+        <item>@string/czech_language</item>
+        <item>@string/danish_language</item>
+        <item>@string/estonian_language</item>
+        <item>@string/finnish_language</item>
+        <item>@string/georgian_language</item>
+        <item>@string/greek_language</item>
+        <item>@string/hungarian_language</item>
+        <item>@string/icelandic_language</item>
+        <item>@string/hindi_language</item>
+        <item>@string/persian_language</item>
+        <item>@string/hebrew_language</item>
+        <item>@string/japanese_language</item>
+        <item>@string/kazakh_language</item>
+        <item>@string/swahili_language</item>
+        <item>@string/lao_language</item>
+        <item>@string/latvian_language</item>
+        <item>@string/lithuaninan_language</item>
+        <item>@string/malay_language</item>
+        <item>@string/nepali_language</item>
+        <item>@string/dutch_language</item>
+        <item>@string/norwegian_language</item>
+        <item>@string/urdu_language</item>
+        <item>@string/polish_language</item>
+        <item>@string/romanian_language</item>
+        <item>@string/russian_language</item>
+        <item>@string/arabic_language</item>
+        <item>@string/serbian_language</item>
+        <item>@string/slovak_language</item>
+        <item>@string/slovenian_language</item>
+        <item>@string/swedish_language</item>
+        <item>@string/thai_language</item>
+        <item>@string/turkish_language</item>
+        <item>@string/turkmen_language</item>
+        <item>@string/ucranian_language</item>
+        <item>@string/uzbek_language</item>
+        <item>@string/vietnamese_language</item>
     </array>
     <array name="languages_short">
         <item>@string/spanish_language_short</item>
         <item>@string/english_language_short</item>
         <item>@string/portuguese_language_short</item>
-        <item>@string/italian_language_short</item>
         <item>@string/german_language_short</item>
         <item>@string/french_language_short</item>
+        <item>@string/italian_language_short</item>
+        <item>@string/armenian_language_short</item>
+        <item>@string/bengali_language_short</item>
+        <item>@string/bulgarian_language_short</item>
+        <item>@string/khmer_language_short</item>
+        <item>@string/chinese_language_short</item>
+        <item>@string/croatian_language_short</item>
+        <item>@string/czech_language_short</item>
+        <item>@string/danish_language_short</item>
+        <item>@string/estonian_language_short</item>
+        <item>@string/finnish_language_short</item>
+        <item>@string/georgian_language_short</item>
+        <item>@string/greek_language_short</item>
+        <item>@string/hungarian_language_short</item>
+        <item>@string/icelandic_language_short</item>
+        <item>@string/hindi_language_short</item>
+        <item>@string/persian_language_short</item>
+        <item>@string/hebrew_language_short</item>
+        <item>@string/japanese_language_short</item>
+        <item>@string/kazakh_language_short</item>
+        <item>@string/swahili_language_short</item>
+        <item>@string/lao_language_short</item>
+        <item>@string/latvian_language_short</item>
+        <item>@string/lithuaninan_language_short</item>
+        <item>@string/malay_language_short</item>
+        <item>@string/nepali_language_short</item>
+        <item>@string/dutch_language_short</item>
+        <item>@string/norwegian_language_short</item>
+        <item>@string/urdu_language_short</item>
+        <item>@string/polish_language_short</item>
+        <item>@string/romanian_language_short</item>
+        <item>@string/russian_language_short</item>
+        <item>@string/arabic_language_short</item>
+        <item>@string/serbian_language_short</item>
+        <item>@string/slovak_language_short</item>
+        <item>@string/slovenian_language_short</item>
+        <item>@string/swedish_language_short</item>
+        <item>@string/thai_language_short</item>
+        <item>@string/turkish_language_short</item>
+        <item>@string/turkmen_language_short</item>
+        <item>@string/ucranian_language_short</item>
+        <item>@string/uzbek_language_short</item>
+        <item>@string/vietnamese_language_short</item>
     </array>
     <array name="country_flags">
         <item>@drawable/flag_spain</item>
         <item>@drawable/flag_uk</item>
         <item>@drawable/flag_brazil</item>
-        <item>@drawable/flag_italy</item>
         <item>@drawable/flag_germany</item>
         <item>@drawable/flag_france</item>
+        <item>@drawable/flag_italy</item>
+        <item>@drawable/flag_armenia</item>
+        <item>@drawable/flag_bangladesh</item>
+        <item>@drawable/flag_bulgary</item>
+        <item>@drawable/flag_cambodia</item>
+        <item>@drawable/flag_china</item>
+        <item>@drawable/flag_croatia</item>
+        <item>@drawable/flag_czechia</item>
+        <item>@drawable/flag_denmark</item>
+        <item>@drawable/flag_estonia</item>
+        <item>@drawable/flag_finland</item>
+        <item>@drawable/flag_georgia</item>
+        <item>@drawable/flag_greece</item>
+        <item>@drawable/flag_hungary</item>
+        <item>@drawable/flag_iceland</item>
+        <item>@drawable/flag_india</item>
+        <item>@drawable/flag_iran</item>
+        <item>@drawable/flag_israel</item>
+        <item>@drawable/flag_japan</item>
+        <item>@drawable/flag_kazakhstan</item>
+        <item>@drawable/flag_kenya</item>
+        <item>@drawable/flag_laos</item>
+        <item>@drawable/flag_latvia</item>
+        <item>@drawable/flag_lithuania</item>
+        <item>@drawable/flag_malaysia</item>
+        <item>@drawable/flag_nepal</item>
+        <item>@drawable/flag_netherlands</item>
+        <item>@drawable/flag_norway</item>
+        <item>@drawable/flag_pakistan</item>
+        <item>@drawable/flag_poland</item>
+        <item>@drawable/flag_romania</item>
+        <item>@drawable/flag_russia</item>
+        <item>@drawable/flag_saudi_arabia</item>
+        <item>@drawable/flag_serbia</item>
+        <item>@drawable/flag_slovakia</item>
+        <item>@drawable/flag_slovenia</item>
+        <item>@drawable/flag_sweden</item>
+        <item>@drawable/flag_thailand</item>
+        <item>@drawable/flag_turkey</item>
+        <item>@drawable/flag_turkmenistan</item>
+        <item>@drawable/flag_ukraine</item>
+        <item>@drawable/flag_uzbekistan</item>
+        <item>@drawable/flag_vietnam</item>
     </array>
 
 </resources>
