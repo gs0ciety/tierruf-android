@@ -36,6 +36,7 @@ import java.util.Set;
 
 public class GameFragment extends Fragment {
 
+    private static int NUMBER_OF_CHOICES = 6;
     private MainActivityBehavior mainActivityBehavior;
     private MediaPlayer mediaPlayer;
 
@@ -111,7 +112,7 @@ public class GameFragment extends Fragment {
         }
 
 
-        int option = getMainAnimalPositionUsed(lastCorrectOptionsUsed, 6);
+        int option = getMainAnimalPositionUsed(lastCorrectOptionsUsed);
         switch (option) {
             case 1:
             default:
@@ -170,11 +171,19 @@ public class GameFragment extends Fragment {
         return view;
     }
 
-    private Integer getMainAnimalPositionUsed(final Set<Integer> lastMainPositionsUsed, final int animalsAmount) {
+    /**
+     * We get a random integer between 1 and the number of choices, avoiding last position numbers
+     * 
+     * if NUMBER_OF_CHOICES = 6, this method will return --> [1, 6]
+     *
+     * @param lastMainPositionsUsed the last position numbers used
+     * @return a random Integer
+     */
+    private Integer getMainAnimalPositionUsed(final Set<Integer> lastMainPositionsUsed) {
         final Random r = new Random();
-        int result = r.nextInt(animalsAmount);
+        int result = r.nextInt(NUMBER_OF_CHOICES + 1);
         while (!lastMainPositionsUsed.contains(result)) {
-            result = r.nextInt(animalsAmount);
+            result = r.nextInt(NUMBER_OF_CHOICES + 1);
             lastMainPositionsUsed.add(result);
         }
         return result;
@@ -266,7 +275,7 @@ public class GameFragment extends Fragment {
         });
     }
 
-    private void showSnackbar (final View view, final String displayText, final int color) {
+    private void showSnackbar(final View view, final String displayText, final int color) {
         Snackbar snackbar = Snackbar
                 .make(view.findViewById(R.id.constraint_activity_main_game), displayText, Snackbar.LENGTH_SHORT);
 
