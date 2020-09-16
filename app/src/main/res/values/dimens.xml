@@ -6,5 +6,8 @@
     <dimen name="width_flag">50dp</dimen>
 <!--TEXT SIZE-->
     <dimen name="font_size_animal_name">14sp</dimen>
+    <dimen name="font_size_language_text">16sp</dimen>
     <dimen name="font_size_animal_name_game">48sp</dimen>
+    <dimen name="width_language_item_margin_left">80dp</dimen>
+    <dimen name="height_language_item_list">200dp</dimen>
 </resources>
