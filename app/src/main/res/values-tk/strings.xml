@@ -2,7 +2,7 @@
 <!--APPLICATION NAME-->
 <string name="app_name">Tierruf</string>
 <!--ANIMALS-->
-<string name="bear">BEAR</string>
+<string name="bear">AÝY</string>
 <string name="bee">ARY</string>
 <string name="camel">DÜÝE</string>
 <string name="cat">PIŞIK</string>
@@ -27,7 +27,7 @@
 <string name="sheep">GOÝUN</string>
 <string name="snake">ÝYLAN</string>
 <string name="tiger">GAPLAŇ</string>
-<string name="toucan">TUCAN</string>
+<string name="toucan">TUKAN</string>
 <string name="whale">WHALE</string>
 <string name="wolf">MÖJEK</string>
 <!--OTHER TEXT-->
@@ -35,9 +35,9 @@
 <string name="title_language_dialog">başga bir dilde diňle!</string>
 <!--LANGUAGES-->
 <string name="spanish_language">Iňlisçe</string>
-<string name="english_language">spanish</string>
+<string name="english_language">Ispan</string>
 <string name="portuguese_language">portekizce</string>
-<string name="german_language">german</string>
+<string name="german_language">Nemes</string>
 <string name="french_language">fransuz</string>
 <string name="italian_language">italiýan</string>
 <string name="armenian_language">ermeni</string>
@@ -53,7 +53,7 @@
 <string name="georgian_language">Gürjüstanyň</string>
 <string name="greek_language">grek</string>
 <string name="hungarian_language">Wengriýanyň</string>
-<string name="icelandic_language">icelandic</string>
+<string name="icelandic_language">Islandiýa</string>
 <string name="hindi_language">hindi</string>
 <string name="persian_language">Pars</string>
 <string name="hebrew_language">Hebrew</string>
@@ -62,7 +62,7 @@
 <string name="swahili_language">Swahili</string>
 <string name="lao_language">Turkmen Lao</string>
 <string name="latvian_language">Latwiýanyň</string>
-<string name="lithuaninan_language">lithuaninan</string>
+<string name="lithuanian_language">Litwanyň</string>
 <string name="malay_language">malay</string>
 <string name="nepali_language">Nepal</string>
 <string name="dutch_language">Niderlandlar</string>
@@ -77,9 +77,9 @@
 <string name="slovenian_language">Sloweniýanyň</string>
 <string name="swedish_language">Şwesiýanyň</string>
 <string name="thai_language">thai</string>
-<string name="turkish_language">turkish</string>
+<string name="turkish_language">Türk</string>
 <string name="turkmen_language">türkmençe</string>
-<string name="ucranian_language">ucranian</string>
+<string name="ucranian_language">ukrain</string>
 <string name="uzbek_language">rusça</string>
 <string name="vietnamese_language">vietnam</string>
 <!--LANGUAGES SHORT-->

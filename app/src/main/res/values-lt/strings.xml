@@ -62,9 +62,9 @@
 <string name="swahili_language">svahilių</string>
 <string name="lao_language">Lao</string>
 <string name="latvian_language">Latvijos</string>
-<string name="lithuaninan_language">lithuaninan</string>
+<string name="lithuanian_language">Lietuvos</string>
 <string name="malay_language">malajiečių</string>
-<string name="nepali_language">Nepali</string>
+<string name="nepali_language">Nepaliečių</string>
 <string name="dutch_language">olandų</string>
 <string name="norwegian_language">Norvegijos</string>
 <string name="urdu_language">Urdų kalba</string>
@@ -79,7 +79,7 @@
 <string name="thai_language">tajų</string>
 <string name="turkish_language">turkų</string>
 <string name="turkmen_language">turkmėnų</string>
-<string name="ucranian_language">ucranian</string>
+<string name="ucranian_language">ukrainietis</string>
 <string name="uzbek_language">uzbekų</string>
 <string name="vietnamese_language">vietnamiečių</string>
 <!--LANGUAGES SHORT-->

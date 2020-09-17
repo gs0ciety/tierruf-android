@@ -27,14 +27,14 @@
 <string name="sheep">QO\'Y</string>
 <string name="snake">ILON</string>
 <string name="tiger">YO\'LBARS</string>
-<string name="toucan">TOUCAN</string>
+<string name="toucan">TEGAN</string>
 <string name="whale">KIT</string>
 <string name="wolf">BO\'RI</string>
 <!--OTHER TEXT-->
 <string name="incorrect">QAYTA URINIB KO\'RING!</string>
 <string name="title_language_dialog">Boshqa tilda Play!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">english</string>
+<string name="spanish_language">Ingliz tili</string>
 <string name="english_language">Ispaniya</string>
 <string name="portuguese_language">Portugaliya</string>
 <string name="german_language">german</string>
@@ -62,7 +62,7 @@
 <string name="swahili_language">Svahilicha</string>
 <string name="lao_language">Lao</string>
 <string name="latvian_language">Latviya</string>
-<string name="lithuaninan_language">lithuaninan</string>
+<string name="lithuanian_language">Litva</string>
 <string name="malay_language">Malaycha</string>
 <string name="nepali_language">Nepali</string>
 <string name="dutch_language">Gollandiya</string>
@@ -79,7 +79,7 @@
 <string name="thai_language">Tailand</string>
 <string name="turkish_language">turkish</string>
 <string name="turkmen_language">Turkmaniston</string>
-<string name="ucranian_language">ucranian</string>
+<string name="ucranian_language">ukrainalik</string>
 <string name="uzbek_language">uzbek</string>
 <string name="vietnamese_language">Vetnam</string>
 <!--LANGUAGES SHORT-->

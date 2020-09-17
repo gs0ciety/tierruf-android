@@ -41,7 +41,7 @@
 <string name="french_language">franču</string>
 <string name="italian_language">Itālijas</string>
 <string name="armenian_language">armēņu</string>
-<string name="bengali_language">bengali</string>
+<string name="bengali_language">Bengāļu valoda</string>
 <string name="bulgarian_language">Bulgārijas</string>
 <string name="khmer_language">Khmeru</string>
 <string name="chinese_language">ķīniešu</string>
@@ -62,7 +62,7 @@
 <string name="swahili_language">swahili</string>
 <string name="lao_language">Lao</string>
 <string name="latvian_language">Latvijas</string>
-<string name="lithuaninan_language">lithuaninan</string>
+<string name="lithuanian_language">lietuviešu</string>
 <string name="malay_language">malajiešu</string>
 <string name="nepali_language">nepāliešu</string>
 <string name="dutch_language">holandiešu</string>
@@ -79,7 +79,7 @@
 <string name="thai_language">taju</string>
 <string name="turkish_language">Turku</string>
 <string name="turkmen_language">turkmēnis</string>
-<string name="ucranian_language">ucranian</string>
+<string name="ucranian_language">ukraiņu</string>
 <string name="uzbek_language">uzbeku</string>
 <string name="vietnamese_language">vjetnamiešu</string>
 <!--LANGUAGES SHORT-->

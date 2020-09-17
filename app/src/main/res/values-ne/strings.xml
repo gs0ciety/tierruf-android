@@ -27,7 +27,7 @@
 <string name="sheep">भेडा</string>
 <string name="snake">सर्प</string>
 <string name="tiger">बाघ</string>
-<string name="toucan">TOUCAN</string>
+<string name="toucan">टोकन</string>
 <string name="whale">ह्वेल</string>
 <string name="wolf">ब्वाँसो</string>
 <!--OTHER TEXT-->
@@ -62,7 +62,7 @@
 <string name="swahili_language">स्वाहिली</string>
 <string name="lao_language">लाओ</string>
 <string name="latvian_language">लातवियाई</string>
-<string name="lithuaninan_language">lithuaninan</string>
+<string name="lithuanian_language">लिथुआनियन</string>
 <string name="malay_language">मलाया</string>
 <string name="nepali_language">नेपाली</string>
 <string name="dutch_language">डच</string>
@@ -79,7 +79,7 @@
 <string name="thai_language">थाई</string>
 <string name="turkish_language">टर्की</string>
 <string name="turkmen_language">तुर्कमेन</string>
-<string name="ucranian_language">ucranian</string>
+<string name="ucranian_language">युक्रेन</string>
 <string name="uzbek_language">उज़्बेक</string>
 <string name="vietnamese_language">भियतनामी</string>
 <!--LANGUAGES SHORT-->

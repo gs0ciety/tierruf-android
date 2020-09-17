@@ -60,10 +60,10 @@
 <string name="japanese_language">jaapani</string>
 <string name="kazakh_language">kasahhi</string>
 <string name="swahili_language">swahili</string>
-<string name="lao_language">Lao</string>
+<string name="lao_language">lao</string>
 <string name="latvian_language">läti</string>
-<string name="lithuaninan_language">lithuaninan</string>
-<string name="malay_language">malay</string>
+<string name="lithuanian_language">leedu</string>
+<string name="malay_language">Malai keel</string>
 <string name="nepali_language">nepali</string>
 <string name="dutch_language">hollandi</string>
 <string name="norwegian_language">norra</string>
@@ -79,7 +79,7 @@
 <string name="thai_language">tai</string>
 <string name="turkish_language">türgi</string>
 <string name="turkmen_language">turkmeeni</string>
-<string name="ucranian_language">ucranian</string>
+<string name="ucranian_language">ukrainlane</string>
 <string name="uzbek_language">usbeki</string>
 <string name="vietnamese_language">vietnami</string>
 <!--LANGUAGES SHORT-->

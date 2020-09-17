@@ -62,7 +62,7 @@
 <string name="swahili_language">swahili</string>
 <string name="lao_language">lao</string>
 <string name="latvian_language">letonă</string>
-<string name="lithuaninan_language">lithuaninan</string>
+<string name="lithuanian_language">lituanian</string>
 <string name="malay_language">malaezian</string>
 <string name="nepali_language">nepaleză</string>
 <string name="dutch_language">olandeză</string>
@@ -79,9 +79,9 @@
 <string name="thai_language">tailandez</string>
 <string name="turkish_language">turc</string>
 <string name="turkmen_language">turcmen</string>
-<string name="ucranian_language">ucranian</string>
+<string name="ucranian_language">ucrainean</string>
 <string name="uzbek_language">uzbec</string>
-<string name="vietnamese_language">vietnamese</string>
+<string name="vietnamese_language">Vietnameză</string>
 <!--LANGUAGES SHORT-->
 <string name="spanish_language_short">es</string>
 <string name="english_language_short">en</string>

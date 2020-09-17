@@ -40,8 +40,8 @@
 <string name="german_language">Nemec</string>
 <string name="french_language">francúzsky</string>
 <string name="italian_language">taliansky</string>
-<string name="armenian_language">armenian</string>
-<string name="bengali_language">bengali</string>
+<string name="armenian_language">Arménsky</string>
+<string name="bengali_language">Bengálsky</string>
 <string name="bulgarian_language">bulharský</string>
 <string name="khmer_language">khmer</string>
 <string name="chinese_language">čínsky</string>
@@ -59,10 +59,10 @@
 <string name="hebrew_language">hebrejčina</string>
 <string name="japanese_language">japonský</string>
 <string name="kazakh_language">kazašský</string>
-<string name="swahili_language">swahili</string>
+<string name="swahili_language">Svahilčina</string>
 <string name="lao_language">lao</string>
 <string name="latvian_language">lotyšský</string>
-<string name="lithuaninan_language">lithuaninan</string>
+<string name="lithuanian_language">litovský</string>
 <string name="malay_language">malajsky</string>
 <string name="nepali_language">nepálsky</string>
 <string name="dutch_language">holandský</string>
@@ -78,9 +78,9 @@
 <string name="swedish_language">švédsky</string>
 <string name="thai_language">thai</string>
 <string name="turkish_language">turecký</string>
-<string name="turkmen_language">Turkmen</string>
-<string name="ucranian_language">ucranian</string>
-<string name="uzbek_language">Uzbek</string>
+<string name="turkmen_language">Turkménsky</string>
+<string name="ucranian_language">ukrajinský</string>
+<string name="uzbek_language">Uzbecky</string>
 <string name="vietnamese_language">vietnamský</string>
 <!--LANGUAGES SHORT-->
 <string name="spanish_language_short">es</string>

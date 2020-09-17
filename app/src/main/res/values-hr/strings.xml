@@ -53,7 +53,7 @@
 <string name="georgian_language">gruzijski</string>
 <string name="greek_language">grčki</string>
 <string name="hungarian_language">madžarski</string>
-<string name="icelandic_language">icelandic</string>
+<string name="icelandic_language">Islandski</string>
 <string name="hindi_language">hindski</string>
 <string name="persian_language">persijski</string>
 <string name="hebrew_language">Hebrejski</string>
@@ -61,8 +61,8 @@
 <string name="kazakh_language">Kazak</string>
 <string name="swahili_language">swahili</string>
 <string name="lao_language">Lao</string>
-<string name="latvian_language">latvian</string>
-<string name="lithuaninan_language">lithuaninan</string>
+<string name="latvian_language">Latvijski</string>
+<string name="lithuanian_language">litvanski</string>
 <string name="malay_language">malajski</string>
 <string name="nepali_language">nepalski</string>
 <string name="dutch_language">Nizozemac</string>
@@ -79,7 +79,7 @@
 <string name="thai_language">thai</string>
 <string name="turkish_language">turski</string>
 <string name="turkmen_language">turkmenski</string>
-<string name="ucranian_language">ucranian</string>
+<string name="ucranian_language">ukrajinski</string>
 <string name="uzbek_language">uzbečki</string>
 <string name="vietnamese_language">vijetnamski</string>
 <!--LANGUAGES SHORT-->

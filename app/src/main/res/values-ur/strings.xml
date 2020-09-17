@@ -27,7 +27,7 @@
 <string name="sheep">بھیڑوں</string>
 <string name="snake">سانپ</string>
 <string name="tiger">چیتا</string>
-<string name="toucan">TOUCAN کے</string>
+<string name="toucan">ٹوکنکے</string>
 <string name="whale">وہیل</string>
 <string name="wolf">بھیڑیا</string>
 <!--OTHER TEXT-->
@@ -62,7 +62,7 @@
 <string name="swahili_language">سواحلی</string>
 <string name="lao_language">لاؤ</string>
 <string name="latvian_language">لیٹوین</string>
-<string name="lithuaninan_language">lithuaninan</string>
+<string name="lithuanian_language">لتھوانیائی</string>
 <string name="malay_language">مالے</string>
 <string name="nepali_language">نیپالی</string>
 <string name="dutch_language">ڈچ</string>
@@ -79,7 +79,7 @@
 <string name="thai_language">تھائی</string>
 <string name="turkish_language">ترکی</string>
 <string name="turkmen_language">ترکمن</string>
-<string name="ucranian_language">ucranian</string>
+<string name="ucranian_language">تحقیقات</string>
 <string name="uzbek_language">ازبیک</string>
 <string name="vietnamese_language">ویتنامی</string>
 <!--LANGUAGES SHORT-->

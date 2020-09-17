@@ -62,7 +62,7 @@
 <string name="swahili_language">סוואהילית</string>
 <string name="lao_language">לאו</string>
 <string name="latvian_language">לטבי</string>
-<string name="lithuaninan_language">lithuaninan</string>
+<string name="lithuanian_language">ליטאי</string>
 <string name="malay_language">מלאית</string>
 <string name="nepali_language">נפאלית</string>
 <string name="dutch_language">הוֹלַנדִי</string>
@@ -78,8 +78,8 @@
 <string name="swedish_language">שבדי</string>
 <string name="thai_language">תאילנדי</string>
 <string name="turkish_language">טורקי</string>
-<string name="turkmen_language">Turkmen</string>
-<string name="ucranian_language">ucranian</string>
+<string name="turkmen_language">טורקמנים</string>
+<string name="ucranian_language">אוקראיני</string>
 <string name="uzbek_language">אוזבקי</string>
 <string name="vietnamese_language">ויאטנמית</string>
 <!--LANGUAGES SHORT-->

@@ -27,7 +27,7 @@
 <string name="sheep">ចៀម</string>
 <string name="snake">សត្វពស់</string>
 <string name="tiger">សត្វខ្លា</string>
-<string name="toucan">TOUCANS</string>
+<string name="toucan">ទួកកាន</string>
 <string name="whale">ត្រីបាឡែន</string>
 <string name="wolf">ចចក</string>
 <!--OTHER TEXT-->
@@ -62,7 +62,7 @@
 <string name="swahili_language">ភាសាស្វាហ៊ីលី</string>
 <string name="lao_language">ឡាវ</string>
 <string name="latvian_language">ភាសាឡាតវីយ៉ា</string>
-<string name="lithuaninan_language">lithuaninan</string>
+<string name="lithuanian_language">លីទុយអានី</string>
 <string name="malay_language">ភាសាម៉ាឡេ</string>
 <string name="nepali_language">នេប៉ាល់</string>
 <string name="dutch_language">ប្រទេសហូឡង់</string>
@@ -79,8 +79,8 @@
 <string name="thai_language">ថៃ</string>
 <string name="turkish_language">តួកគី</string>
 <string name="turkmen_language">ទួរមេនី</string>
-<string name="ucranian_language">ucranian</string>
-<string name="uzbek_language">Uzbek</string>
+<string name="ucranian_language">អ៊ុយក្រែន</string>
+<string name="uzbek_language">អ៊ូសបេគីស</string>
 <string name="vietnamese_language">វៀតណាម</string>
 <!--LANGUAGES SHORT-->
 <string name="spanish_language_short">es</string>

@@ -2,10 +2,10 @@
 <!--APPLICATION NAME-->
 <string name="app_name">Tierruf</string>
 <!--ANIMALS-->
-<string name="bear">ᲓᲐᲗᲕᲘ</string>
-<string name="bee">BEE</string>
-<string name="camel">CAMEL</string>
-<string name="cat">ᲙᲐᲢᲐ</string>
+<string name="bear">დათვი</string>
+<string name="bee">ფუტკარი</string>
+<string name="camel">აქლემი</string>
+<string name="cat">CAT</string>
 <string name="cow">ᲫᲠᲝᲮᲐ</string>
 <string name="dog">ᲫᲐᲦᲚᲘ</string>
 <string name="dolphin">DOLPHIN</string>
@@ -62,7 +62,7 @@
 <string name="swahili_language">swahili</string>
 <string name="lao_language">lao</string>
 <string name="latvian_language">latvian</string>
-<string name="lithuaninan_language">lithuaninan</string>
+<string name="lithuanian_language">lithuanian</string>
 <string name="malay_language">malay</string>
 <string name="nepali_language">ნეპალური</string>
 <string name="dutch_language">dutch</string>
