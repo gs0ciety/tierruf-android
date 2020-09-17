@@ -7,8 +7,8 @@
     android:layout_height="wrap_content"
     android:gravity="start"
     android:orientation="horizontal"
-    android:layout_marginLeft="@dimen/width_language_item_margin_left"
-    android:layout_marginStart="@dimen/width_language_item_margin_left"
+    android:paddingLeft="@dimen/width_language_item_margin_left"
+    android:paddingStart="@dimen/width_language_item_margin_left"
     android:padding="5dp">
 
     <ImageView
