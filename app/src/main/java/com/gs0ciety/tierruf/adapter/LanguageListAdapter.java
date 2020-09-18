@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.gs0ciety.tierruf.R;
 import com.gs0ciety.tierruf.interfaces.ButtonPanelBehaviors;
 import com.gs0ciety.tierruf.model.LanguageItem;
@@ -47,7 +49,7 @@ public class LanguageListAdapter extends RecyclerView.Adapter<LanguageListAdapte
         // set image based on selected text
         viewHolder.countryFlag.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(),
                 languageItemList.get(i).getCountryFlagResId(), null));
-        viewHolder.countryName.setText(languageItemList.get(i).getCountryName());
+        viewHolder.countryName.setText(StringUtils.capitalize(languageItemList.get(i).getCountryName()));
         viewHolder.linearLayoutItemLanguage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
