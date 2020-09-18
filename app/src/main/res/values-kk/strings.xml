@@ -34,8 +34,8 @@
 <string name="incorrect">ҚАЙТАДАН КӨРІҢІЗ!</string>
 <string name="title_language_dialog">Басқа тілде Play!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">ағылшын</string>
-<string name="english_language">испан</string>
+<string name="spanish_language">испан</string>
+<string name="english_language">ағылшын</string>
 <string name="portuguese_language">португал тілі</string>
 <string name="german_language">неміс</string>
 <string name="french_language">француз</string>

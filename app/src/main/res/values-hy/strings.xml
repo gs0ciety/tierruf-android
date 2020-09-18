@@ -34,8 +34,8 @@
 <string name="incorrect">Կրկին փորձեք</string>
 <string name="title_language_dialog">Խաղալ այլ լեզվով:</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Անգլերեն</string>
-<string name="english_language">իսպաներեն</string>
+<string name="spanish_language">իսպաներեն</string>
+<string name="english_language">Անգլերեն</string>
 <string name="portuguese_language">Պորտուգալերեն</string>
 <string name="german_language">գերմանական</string>
 <string name="french_language">ֆրանսերեն</string>

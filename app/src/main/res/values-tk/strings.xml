@@ -34,8 +34,8 @@
 <string name="incorrect">TÄZEDEN SYNANŞ!</string>
 <string name="title_language_dialog">başga bir dilde diňle!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Iňlisçe</string>
-<string name="english_language">Ispan</string>
+<string name="spanish_language">Ispan</string>
+<string name="english_language">Iňlisçe</string>
 <string name="portuguese_language">portekizce</string>
 <string name="german_language">Nemes</string>
 <string name="french_language">fransuz</string>

@@ -34,8 +34,8 @@
 <string name="incorrect">JARIBU TENA!</string>
 <string name="title_language_dialog">Cheza kwa lugha nyingine!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Kiingereza</string>
-<string name="english_language">Kihispania</string>
+<string name="spanish_language">Kihispania</string>
+<string name="english_language">Kiingereza</string>
 <string name="portuguese_language">Kireno</string>
 <string name="german_language">kijerumani</string>
 <string name="french_language">Kifaransa</string>

@@ -34,8 +34,8 @@
 <string name="incorrect">FÖRSÖK IGEN!</string>
 <string name="title_language_dialog">Spela på ett annat språk!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">engelsk</string>
-<string name="english_language">spanska</string>
+<string name="spanish_language">spanska</string>
+<string name="english_language">engelsk</string>
 <string name="portuguese_language">portugisiska</string>
 <string name="german_language">tysk</string>
 <string name="french_language">franska</string>

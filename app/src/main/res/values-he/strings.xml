@@ -34,8 +34,8 @@
 <string name="incorrect">נסה שוב!</string>
 <string name="title_language_dialog">לשחק בשפה אחרת!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">אנגלית</string>
-<string name="english_language">ספרדית</string>
+<string name="spanish_language">ספרדית</string>
+<string name="english_language">אנגלית</string>
 <string name="portuguese_language">פורטוגזי</string>
 <string name="german_language">גֶרמָנִיָת</string>
 <string name="french_language">צָרְפָתִית</string>

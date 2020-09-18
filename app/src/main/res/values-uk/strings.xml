@@ -34,8 +34,8 @@
 <string name="incorrect">ПОВТОР!</string>
 <string name="title_language_dialog">Грати на іншій мові!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">англійська</string>
-<string name="english_language">іспанська</string>
+<string name="spanish_language">іспанська</string>
+<string name="english_language">англійська</string>
 <string name="portuguese_language">португальська</string>
 <string name="german_language">німецький</string>
 <string name="french_language">французький</string>

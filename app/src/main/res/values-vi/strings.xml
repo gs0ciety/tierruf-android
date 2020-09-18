@@ -34,8 +34,8 @@
 <string name="incorrect">THỬ LẠI!</string>
 <string name="title_language_dialog">Chơi bằng ngôn ngữ khác!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Tiếng Anh</string>
-<string name="english_language">người Tây Ban Nha</string>
+<string name="spanish_language">người Tây Ban Nha</string>
+<string name="english_language">Tiếng Anh</string>
 <string name="portuguese_language">Người Bồ Đào Nha</string>
 <string name="german_language">tiếng Đức</string>
 <string name="french_language">người Pháp</string>

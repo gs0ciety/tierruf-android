@@ -34,8 +34,8 @@
 <string name="incorrect">ລອງ​ອີກ​ຄັ້ງ!</string>
 <string name="title_language_dialog">ບັນຈຸເຂົ້າໃນພາສາອື່ນ!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">ພາສາອັງກິດ</string>
-<string name="english_language">ແອສປາໂຍນ</string>
+<string name="spanish_language">ແອສປາໂຍນ</string>
+<string name="english_language">ພາສາອັງກິດ</string>
 <string name="portuguese_language">ປອກຕຸຍການ</string>
 <string name="german_language">ເຍຍລະມັນ</string>
 <string name="french_language">ພາສາຝຣັ່ງ</string>

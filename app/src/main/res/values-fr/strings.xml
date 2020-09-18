@@ -34,8 +34,8 @@
 <string name="incorrect">RÉESSAYER!</string>
 <string name="title_language_dialog">Jouer dans une autre langue!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Anglais</string>
-<string name="english_language">Espagnol</string>
+<string name="spanish_language">Espagnol</string>
+<string name="english_language">Anglais</string>
 <string name="portuguese_language">Portugais</string>
 <string name="german_language">allemand</string>
 <string name="french_language">français</string>

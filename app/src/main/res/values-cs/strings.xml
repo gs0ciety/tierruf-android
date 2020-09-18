@@ -34,8 +34,8 @@
 <string name="incorrect">ZKUS TO ZNOVU!</string>
 <string name="title_language_dialog">Hrát v jiném jazyce!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Angličtina</string>
-<string name="english_language">španělština</string>
+<string name="spanish_language">španělština</string>
+<string name="english_language">Angličtina</string>
 <string name="portuguese_language">portugalština</string>
 <string name="german_language">Němec</string>
 <string name="french_language">francouzština</string>

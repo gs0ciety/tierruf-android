@@ -34,8 +34,8 @@
 <string name="incorrect">ΠΡΟΣΠΑΘΗΣΕ ΞΑΝΑ!</string>
 <string name="title_language_dialog">Παίξτε σε άλλη γλώσσα!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Αγγλικά</string>
-<string name="english_language">Ισπανικά</string>
+<string name="spanish_language">Ισπανικά</string>
+<string name="english_language">Αγγλικά</string>
 <string name="portuguese_language">Πορτογαλικά</string>
 <string name="german_language">Γερμανός</string>
 <string name="french_language">γαλλική γλώσσα</string>

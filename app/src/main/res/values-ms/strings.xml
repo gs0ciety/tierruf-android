@@ -34,8 +34,8 @@
 <string name="incorrect">CUBA LAGI!</string>
 <string name="title_language_dialog">Bermain dalam bahasa lain!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">bahasa inggeris</string>
-<string name="english_language">Sepanyol</string>
+<string name="spanish_language">Sepanyol</string>
+<string name="english_language">bahasa inggeris</string>
 <string name="portuguese_language">Portugis</string>
 <string name="german_language">jerman</string>
 <string name="french_language">perancis</string>

@@ -34,8 +34,8 @@
 <string name="incorrect">पुनः प्रयास करें!</string>
 <string name="title_language_dialog">किसी अन्य भाषा में खेलने के लिए!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">अंग्रेज़ी</string>
-<string name="english_language">स्पेनिश</string>
+<string name="spanish_language">स्पेनिश</string>
+<string name="english_language">अंग्रेज़ी</string>
 <string name="portuguese_language">पुर्तगाली</string>
 <string name="german_language">जर्मन</string>
 <string name="french_language">फ्रेंच</string>

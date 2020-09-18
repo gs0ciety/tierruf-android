@@ -34,8 +34,8 @@
 <string name="incorrect">ÎNCEARCĂ DIN NOU!</string>
 <string name="title_language_dialog">Joacă într-o altă limbă!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Engleză</string>
-<string name="english_language">Spaniolă</string>
+<string name="spanish_language">Spaniolă</string>
+<string name="english_language">Engleză</string>
 <string name="portuguese_language">portugheză</string>
 <string name="german_language">limba germana</string>
 <string name="french_language">limba franceza</string>

@@ -34,8 +34,8 @@
 <string name="incorrect">ОПИТАЙ ПАК!</string>
 <string name="title_language_dialog">Възпроизвеждане на друг език!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Английски</string>
-<string name="english_language">испански</string>
+<string name="spanish_language">испански</string>
+<string name="english_language">Английски</string>
 <string name="portuguese_language">португалски</string>
 <string name="german_language">Немски</string>
 <string name="french_language">Френски</string>

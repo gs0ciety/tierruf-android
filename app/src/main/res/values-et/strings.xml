@@ -34,8 +34,8 @@
 <string name="incorrect">PROOVI UUESTI!</string>
 <string name="title_language_dialog">Play teises keeles!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Inglise</string>
-<string name="english_language">hispaania</string>
+<string name="spanish_language">hispaania</string>
+<string name="english_language">Inglise</string>
 <string name="portuguese_language">portugali</string>
 <string name="german_language">saksa</string>
 <string name="french_language">prantsuse</string>

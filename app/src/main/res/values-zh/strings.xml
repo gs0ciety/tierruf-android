@@ -34,8 +34,8 @@
 <string name="incorrect">再试一次！</string>
 <string name="title_language_dialog">玩另一种语言！</string>
 <!--LANGUAGES-->
-<string name="spanish_language">英语</string>
-<string name="english_language">西班牙语</string>
+<string name="spanish_language">西班牙语</string>
+<string name="english_language">英语</string>
 <string name="portuguese_language">葡萄牙语</string>
 <string name="german_language">德语</string>
 <string name="french_language">法国</string>

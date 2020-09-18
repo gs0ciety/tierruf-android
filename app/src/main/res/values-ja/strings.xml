@@ -34,8 +34,8 @@
 <string name="incorrect">再試行！</string>
 <string name="title_language_dialog">別の言語でプレイ！</string>
 <!--LANGUAGES-->
-<string name="spanish_language">英語</string>
-<string name="english_language">スペイン語</string>
+<string name="spanish_language">スペイン語</string>
+<string name="english_language">英語</string>
 <string name="portuguese_language">ポルトガル語</string>
 <string name="german_language">ドイツ人</string>
 <string name="french_language">フランス語</string>

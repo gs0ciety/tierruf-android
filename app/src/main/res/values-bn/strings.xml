@@ -34,8 +34,8 @@
 <string name="incorrect">আবার চেষ্টা কর!</string>
 <string name="title_language_dialog">অন্য ভাষায় খেলুন!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">ইংরেজি</string>
-<string name="english_language">স্পেনীয়</string>
+<string name="spanish_language">স্পেনীয়</string>
+<string name="english_language">ইংরেজি</string>
 <string name="portuguese_language">পর্তুগীজ</string>
 <string name="german_language">জার্মান</string>
 <string name="french_language">ফরাসি</string>

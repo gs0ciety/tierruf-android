@@ -34,8 +34,8 @@
 <string name="incorrect">PROBEER HET OPNIEUW!</string>
 <string name="title_language_dialog">Spelen in een andere taal!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Engels</string>
-<string name="english_language">Spaans</string>
+<string name="spanish_language">Spaans</string>
+<string name="english_language">Engels</string>
 <string name="portuguese_language">Portugees</string>
 <string name="german_language">Duitse</string>
 <string name="french_language">Frans</string>

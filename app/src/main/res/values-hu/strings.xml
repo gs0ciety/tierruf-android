@@ -34,8 +34,8 @@
 <string name="incorrect">PRÓBÁLD ÚJRA!</string>
 <string name="title_language_dialog">Játssz egy másik nyelven!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">angol</string>
-<string name="english_language">spanyol</string>
+<string name="spanish_language">spanyol</string>
+<string name="english_language">angol</string>
 <string name="portuguese_language">portugál</string>
 <string name="german_language">német</string>
 <string name="french_language">Francia</string>

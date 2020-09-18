@@ -34,8 +34,8 @@
 <string name="incorrect">POSKUSI PONOVNO!</string>
 <string name="title_language_dialog">Igrajo v drugem jeziku!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">angleščina</string>
-<string name="english_language">španski</string>
+<string name="spanish_language">španski</string>
+<string name="english_language">angleščina</string>
 <string name="portuguese_language">portugalski</string>
 <string name="german_language">nemški</string>
 <string name="french_language">Francoščina</string>

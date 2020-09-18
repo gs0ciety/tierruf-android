@@ -34,8 +34,8 @@
 <string name="incorrect">YRITÄ UUDELLEEN!</string>
 <string name="title_language_dialog">Pelata toisella kielellä!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Englanti</string>
-<string name="english_language">Espanja</string>
+<string name="spanish_language">Espanja</string>
+<string name="english_language">Englanti</string>
 <string name="portuguese_language">Portugalin kieli</string>
 <string name="german_language">Saksan kieli</string>
 <string name="french_language">Ranskan kieli</string>

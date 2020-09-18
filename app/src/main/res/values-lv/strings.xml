@@ -34,8 +34,8 @@
 <string name="incorrect">MĒĢINI VĒLREIZ!</string>
 <string name="title_language_dialog">Spēlēt citā valodā!</string>
 <!--LANGUAGES-->
-<string name="spanish_language">Angļu</string>
-<string name="english_language">spāņu</string>
+<string name="spanish_language">spāņu</string>
+<string name="english_language">Angļu</string>
 <string name="portuguese_language">portugālis</string>
 <string name="german_language">vācu</string>
 <string name="french_language">franču</string>
