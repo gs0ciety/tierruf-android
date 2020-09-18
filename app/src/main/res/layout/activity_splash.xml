@@ -19,7 +19,7 @@
         <ImageView
             android:layout_width="140dp"
             android:layout_height="140dp"
-            app:srcCompat="@drawable/ic_elephant"
+            app:srcCompat="@drawable/ic_splash_elephant"
             />
 
         <TextView
