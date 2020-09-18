@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<!--UI-->
     <dimen name="height_toolbar_96dp">96dp</dimen>
+    <dimen name="height_flag">50dp</dimen>
+    <dimen name="width_flag">50dp</dimen>
+<!--TEXT SIZE-->
     <dimen name="font_size_animal_name">14sp</dimen>
     <dimen name="font_size_language_text">16sp</dimen>
     <dimen name="font_size_animal_name_game">48sp</dimen>
