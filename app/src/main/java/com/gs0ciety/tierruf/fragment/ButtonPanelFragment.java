@@ -85,11 +85,6 @@ public class ButtonPanelFragment extends Fragment {
             public void onSwipeRight() {
                 showLanguageSelection();
             }
-
-            @Override
-            public void onSwipeLeft() {
-                //DO NOTHING
-            }
         });
         return gridRecycler;
     }
@@ -134,11 +129,6 @@ public class ButtonPanelFragment extends Fragment {
             public void onSwipeRight() {
                 showLanguageSelection();
                 tutorialAlertDialog.dismiss();
-            }
-
-            @Override
-            public void onSwipeLeft() {
-                // Do nothing!
             }
         });
     }
