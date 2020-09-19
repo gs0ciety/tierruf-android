@@ -25,8 +25,8 @@ import androidx.fragment.app.Fragment;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.snackbar.Snackbar;
-import com.gs0ciety.tierruf.Types.BuildParamTypes;
-import com.gs0ciety.tierruf.Types.GameModeTypes;
+import com.gs0ciety.tierruf.types.BuildParamTypes;
+import com.gs0ciety.tierruf.types.GameModeTypes;
 import com.gs0ciety.tierruf.R;
 import com.gs0ciety.tierruf.interfaces.MainActivityBehavior;
 
