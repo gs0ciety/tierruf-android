@@ -1,4 +1,4 @@
-package com.gs0ciety.tierruf.Types;
+package com.gs0ciety.tierruf.types;
 
 public class GameModeTypes {
     public static final String SHAPE = "SHAPE";

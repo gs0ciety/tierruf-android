@@ -2,8 +2,8 @@ package com.gs0ciety.tierruf.utils;
 
 import android.os.Bundle;
 
-import com.gs0ciety.tierruf.Types.BuildParamTypes;
-import com.gs0ciety.tierruf.Types.GameModeTypes;
+import com.gs0ciety.tierruf.types.BuildParamTypes;
+import com.gs0ciety.tierruf.types.GameModeTypes;
 import com.gs0ciety.tierruf.fragment.GameFragment;
 import com.gs0ciety.tierruf.interfaces.MainActivityBehavior;
 
