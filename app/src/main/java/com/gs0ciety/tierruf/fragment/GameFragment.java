@@ -270,7 +270,7 @@ public class GameFragment extends Fragment {
                         mediaPlayer.release();
                         mainActivityBehavior.restartGame();
                     }
-                }, 3000);
+                }, 2300);
             }
         });
     }
