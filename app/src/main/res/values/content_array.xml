@@ -25,7 +25,7 @@
         <item>@drawable/img_seal</item>
         <item>@drawable/img_sheep</item>
         <item>@drawable/img_snake</item>
-        <item>@drawable/img_tiger</item>
+        <item>@drawable/img_squirrel</item>
         <item>@drawable/img_toucan</item>
         <item>@drawable/img_whale</item>
         <item>@drawable/img_wolf</item>
@@ -55,7 +55,7 @@
         <item>@raw/seal</item>
         <item>@raw/sheep</item>
         <item>@raw/snake</item>
-        <item>@raw/tiger</item>
+        <item>@raw/squirrel</item>
         <item>@raw/toucan</item>
         <item>@raw/whale</item>
         <item>@raw/wolf</item>
@@ -85,7 +85,7 @@
         <item>@drawable/img_seal_hidden</item>
         <item>@drawable/img_sheep_hidden</item>
         <item>@drawable/img_snake_hidden</item>
-        <item>@drawable/img_tiger_hidden</item>
+        <item>@drawable/img_squirrel_hidden</item>
         <item>@drawable/img_toucan_hidden</item>
         <item>@drawable/img_whale_hidden</item>
         <item>@drawable/img_wolf_hidden</item>
@@ -115,7 +115,7 @@
         <item>@drawable/img_seal_error</item>
         <item>@drawable/img_sheep_error</item>
         <item>@drawable/img_snake_error</item>
-        <item>@drawable/img_tiger_error</item>
+        <item>@drawable/img_squirrel_error</item>
         <item>@drawable/img_toucan_error</item>
         <item>@drawable/img_whale_error</item>
         <item>@drawable/img_wolf_error</item>
@@ -145,7 +145,7 @@
         <item>@string/seal</item>
         <item>@string/sheep</item>
         <item>@string/snake</item>
-        <item>@string/tiger</item>
+        <item>@string/squirrel</item>
         <item>@string/toucan</item>
         <item>@string/whale</item>
         <item>@string/wolf</item>
