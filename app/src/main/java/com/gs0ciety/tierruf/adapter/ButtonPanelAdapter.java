@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -43,7 +42,7 @@ public class ButtonPanelAdapter extends RecyclerView.Adapter<ButtonPanelAdapter.
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
         // set image based on selected text
-        viewHolder.animalImage.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(), animalItemList.get(i).getImageResId(), null));
+        viewHolder.animalImage.setImageResource(animalItemList.get(i).getImageResId());
         viewHolder.animalName.setText(animalItemList.get(i).getName());
         viewHolder.animalImage.setOnClickListener(new View.OnClickListener() {
             @Override
