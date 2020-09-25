@@ -1,12 +1,12 @@
 package com.gs0ciety.tierruf.fragment;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +17,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,10 +26,10 @@ import androidx.fragment.app.Fragment;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.snackbar.Snackbar;
-import com.gs0ciety.tierruf.types.BuildParamTypes;
-import com.gs0ciety.tierruf.types.GameModeTypes;
 import com.gs0ciety.tierruf.R;
 import com.gs0ciety.tierruf.interfaces.MainActivityBehavior;
+import com.gs0ciety.tierruf.types.BuildParamTypes;
+import com.gs0ciety.tierruf.types.GameModeTypes;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -71,12 +72,12 @@ public class GameFragment extends Fragment {
             default:
             case GameModeTypes.SHAPE:
                 final TypedArray mainShapeAnimalArray = getResources().obtainTypedArray(R.array.animal_hidden_drawables);
-                mainAnimal.setImageDrawable(ResourcesCompat.getDrawable(getResources(), mainShapeAnimalArray.getResourceId(correctAnimalResourcePosition, -1), null));
+                mainAnimal.setImageResource(mainShapeAnimalArray.getResourceId(correctAnimalResourcePosition, -1));
                 mainAnimal.setVisibility(View.VISIBLE);
                 mainShapeAnimalArray.recycle();
                 break;
             case GameModeTypes.SOUND:
-                mainAnimal.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_play_circle_outline, null));
+                mainAnimal.setImageResource(R.drawable.btn_play_circle_outline);
                 mainAnimal.setVisibility(View.VISIBLE);
                 mainAnimal.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -222,9 +223,9 @@ public class GameFragment extends Fragment {
         mainAnimalText.setVisibility(View.GONE);
     }
 
-    private Drawable getDrawable(final TypedArray animalImages,
-                                 final int animalResourcePosition) {
-        return ResourcesCompat.getDrawable(getResources(), animalImages.getResourceId(animalResourcePosition, -1), null);
+    private int getDrawable(final TypedArray animalImages,
+                                   final int animalResourcePosition) {
+        return animalImages.getResourceId(animalResourcePosition, -1);
     }
 
     private void configErrorAnimalImage(final ImageView imageView,
@@ -232,12 +233,12 @@ public class GameFragment extends Fragment {
                                         final Set<Integer> lastOptionsAnimalsUsed,
                                         final int correctAnimalResourcePosition) {
         final int randomSecondAnimalPosition = getRandomAnimalOptionPosition(lastOptionsAnimalsUsed, animalImages.length(), correctAnimalResourcePosition);
-        imageView.setImageDrawable(getDrawable(animalImages, randomSecondAnimalPosition));
+        imageView.setImageResource(getDrawable(animalImages, randomSecondAnimalPosition));
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final TypedArray animalErrorImages = getResources().obtainTypedArray(R.array.animal_error_drawables);
-                imageView.setImageDrawable(ResourcesCompat.getDrawable(getResources(), animalErrorImages.getResourceId(randomSecondAnimalPosition, -1), null));
+                imageView.setImageResource(animalErrorImages.getResourceId(randomSecondAnimalPosition, -1));
                 animalErrorImages.recycle();
                 displayIncorrectSnackbar(view.getRootView());
             }
@@ -247,17 +248,16 @@ public class GameFragment extends Fragment {
     private void configCorrectAnimalImage(final ImageView imageView,
                                           final TypedArray animalImages,
                                           final int correctAnimalResourcePosition) {
-        imageView.setImageDrawable(getDrawable(animalImages, correctAnimalResourcePosition));
+        imageView.setImageResource(getDrawable(animalImages, correctAnimalResourcePosition));
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                final LayoutInflater inflater = getLayoutInflater();
-                final View dialogLayout = inflater.inflate(R.layout.dialog_success, null);
-                builder.setCancelable(false).setCancelable(false);
-                builder.setView(dialogLayout);
-                final AlertDialog alertDialog = builder.create();
+                final Dialog alertDialog = new Dialog(getActivity());
+                alertDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                alertDialog.setCancelable(false);
                 alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                alertDialog.setContentView(R.layout.dialog_success);
+                alertDialog.show();
                 mediaPlayer = MediaPlayer.create(getContext(), R.raw.drums_success);
                 alertDialog.show();
                 mediaPlayer.start();

@@ -9,15 +9,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.apache.commons.lang3.StringUtils;
 
 import com.gs0ciety.tierruf.R;
 import com.gs0ciety.tierruf.interfaces.ButtonPanelBehaviors;
 import com.gs0ciety.tierruf.model.LanguageItem;
 
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
@@ -47,8 +45,7 @@ public class LanguageListAdapter extends RecyclerView.Adapter<LanguageListAdapte
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
         // set image based on selected text
-        viewHolder.countryFlag.setImageDrawable(ResourcesCompat.getDrawable(context.getResources(),
-                languageItemList.get(i).getCountryFlagResId(), null));
+        viewHolder.countryFlag.setImageResource(languageItemList.get(i).getCountryFlagResId());
         viewHolder.countryName.setText(StringUtils.capitalize(languageItemList.get(i).getCountryName()));
         viewHolder.linearLayoutItemLanguage.setOnClickListener(new View.OnClickListener() {
             @Override
