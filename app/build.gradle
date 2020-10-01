@@ -9,10 +9,16 @@ android {
         applicationId "com.gs0ciety.tierruf"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 5
+        versionCode 6
         versionName "1.0.1"
         android.defaultConfig.vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    bundle {
+        language {
+            enableSplit = false;
+        }
     }
 
     buildTypes {
