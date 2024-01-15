@@ -101,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
                         rev = jsonObject.getString("_rev");
                         jsonKanjiObject.put("rev", rev);
                     }
-                    if (jsonObject.has("rad_name_ja")) {
-                        hiragana = jsonObject.getString("rad_name_ja");
+                    if (jsonObject.has("kunyomi_ja")) {
+                        hiragana = jsonObject.getString("kunyomi_ja");
                         jsonKanjiObject.put("hiragana", hiragana);
                     }
                     if (jsonObject.has("kunyomi")) {
